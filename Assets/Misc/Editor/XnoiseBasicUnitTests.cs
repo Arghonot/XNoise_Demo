@@ -1,22 +1,49 @@
+using System;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace CustomUnitTesting
 {
-    public class XnoiseBasicUnitTests
+    public static class XnoiseBasicUnitTests
     {
-        public void TestPerlinCPU()
+        public static void GetActiveType()
         {
-            Debug.Log("[UnitTest] TestPerlinCPU launched.");
+            var selectedNode = Selection.activeObject as XNode.Node;
+            string typeName = GetNodeTypeName(selectedNode);
+            Debug.Log("Node type: " + typeName);
         }
 
-        public void TestGraphOrder()
+        public static void RetrieveTypeByName(string typeName)
         {
-            Debug.Log("[UnitTest] TestGraphOrder launched.");
+            if (string.IsNullOrEmpty(typeName)) Debug.Log($"<color=red>[ResolveType] Could not find type: {typeName}</color>");
+
+            Type resolvedType = Type.GetType(typeName);
+            if (resolvedType != null) Debug.Log($"<color=green>[ResolveType] type: {typeName} was findeable</color>");
+
+            // Fallback: search all loaded assemblies
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                resolvedType = assembly.GetType(typeName);
+                if (resolvedType != null)
+                {
+                    Debug.Log($"<color=green>[ResolveType] type: {typeName} was findeable</color>");
+                    return;
+                }
+            }
+
+            Debug.Log($"<color=red>[ResolveType] Could not find type: {typeName}</color>");
         }
 
-        public void TestGPUvsCPU()
+        //public void TestGPUvsCPU()
+        //{
+        //    Debug.Log("[UnitTest] TestGPUvsCPU launched.");
+        //}
+
+        public static string GetNodeTypeName(XNode.Node node)
         {
-            Debug.Log("[UnitTest] TestGPUvsCPU launched.");
+            if (node == null) return null;
+            return node.GetType().AssemblyQualifiedName;
         }
     }
 }
