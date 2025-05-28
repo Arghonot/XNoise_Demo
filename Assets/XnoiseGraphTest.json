@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "Root Module Base",
+      "guid": -9796,
+      "type": "RootModuleBase",
+      "inputs": {}
+    },
+    {
+      "id": "Billow",
+      "guid": -9962,
+      "type": "BillowNode",
+      "inputs": {
+        "frequency": 1.0,
+        "lacunarity": 3.0,
+        "persistence": 2.0,
+        "Octaves": 42,
+        "Seed": -1,
+        "Quality": 2
+      }
+    },
+    {
+      "id": "Renderer",
+      "guid": -17718,
+      "type": "Renderer",
+      "inputs": {}
+    }
+  ],
+  "connections": [
+    {
+      "fromNodeGuid": -9962,
+      "toNodeGuid": -9796,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": -9962,
+      "toNodeGuid": -17718,
+      "inputField": "Input"
+    }
+  ]
+}
