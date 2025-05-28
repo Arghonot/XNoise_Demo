@@ -1,0 +1,3 @@
+[submodule "Assets/XNoise"]
+	path = Assets/XNoise
+	url = https://github.com/Arghonot/Xnoise.git
