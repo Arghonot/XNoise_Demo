@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e216ecb1ae45ba41ad30805b8b8918c, type: 3}
-  m_Name: XnoiseGraphTest
+  m_Name: PerlinCheckerAdd
   m_EditorClassIdentifier: 
-  nodes: []
+  nodes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   blackboard: {fileID: 0}
   originalStorage:
-    GUID: e541f618-dede-4b40-a25f-d115da9db252
+    GUID: c7c01933-b71d-4c81-90fd-6b4327b7ba90
     Floats: []
     Longs: []
     Bools: []
@@ -30,7 +36,7 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: 6fd6dabe-34d9-43ad-a8e4-48ff8bb84f18
+    GUID: 78352afc-a260-40bc-a322-0d3962b05ba9
     Floats: []
     Longs: []
     Bools: []
@@ -46,3 +52,9 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   root: {fileID: 0}
+  south: 90
+  north: -90
+  west: -180
+  east: 180
+  width: 512
+  Height: 512

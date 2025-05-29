@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "Root Module Base",
+      "guid": -9796,
+      "type": "Xnoise.RootModuleBase, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -200.0,
+        "normalized": {
+          "x": 0.813733459,
+          "y": -0.5812382,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 344.093018,
+        "sqrMagnitude": 118400.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Ridged Multifractal",
+      "guid": -12028,
+      "type": "Xnoise.RidgedMultifractalNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -40.0,
+        "y": -104.0,
+        "normalized": {
+          "x": -0.358979076,
+          "y": -0.933345556,
+          "normalized": {
+            "x": -0.3589791,
+            "y": -0.9333456,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 111.427109,
+        "sqrMagnitude": 12416.0
+      },
+      "blackboardPosition": null,
+      "inputs": {
+        "frequency": 1.0,
+        "lacunarity": 1.2,
+        "Octaves": 6,
+        "Seed": 0,
+        "Quality": 2
+      }
+    },
+    {
+      "id": "Renderer",
+      "guid": -17718,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -104.0,
+        "normalized": {
+          "x": 0.9374253,
+          "y": -0.348186553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 298.69046,
+        "sqrMagnitude": 89216.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    }
+  ],
+  "connections": [
+    {
+      "fromNodeGuid": -12028,
+      "toNodeGuid": -9796,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": -12028,
+      "toNodeGuid": -17718,
+      "inputField": "Input"
+    }
+  ],
+  "blackboardPosition": {
+    "x": 632.0,
+    "y": -1064.0,
+    "normalized": {
+      "x": 0.5106881,
+      "y": -0.859766066,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 1237.5459,
+    "sqrMagnitude": 1531520.0
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "nodes": [
+    {
+      "id": "Root Module Base",
+      "guid": -9796,
+      "type": "Xnoise.RootModuleBase, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -200.0,
+        "normalized": {
+          "x": 0.813733459,
+          "y": -0.5812382,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 344.093018,
+        "sqrMagnitude": 118400.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Perlin",
+      "guid": -11946,
+      "type": "Xnoise.PerlinNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -24.0,
+        "y": -136.0,
+        "normalized": {
+          "x": -0.173785344,
+          "y": -0.9847836,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 138.10141,
+        "sqrMagnitude": 19072.0
+      },
+      "blackboardPosition": null,
+      "inputs": {
+        "frequency": 1.0,
+        "lacunarity": 1.2,
+        "persistence": 1.2,
+        "Octaves": 6,
+        "Seed": 2,
+        "Quality": 2
+      }
+    },
+    {
+      "id": "Renderer",
+      "guid": -17718,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -104.0,
+        "normalized": {
+          "x": 0.9374253,
+          "y": -0.348186553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 298.69046,
+        "sqrMagnitude": 89216.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    }
+  ],
+  "connections": [
+    {
+      "fromNodeGuid": -11946,
+      "toNodeGuid": -9796,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": -11946,
+      "toNodeGuid": -17718,
+      "inputField": "Input"
+    }
+  ],
+  "blackboardPosition": {
+    "x": 632.0,
+    "y": -1064.0,
+    "normalized": {
+      "x": 0.5106881,
+      "y": -0.859766066,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 1237.5459,
+    "sqrMagnitude": 1531520.0
+  }
+}

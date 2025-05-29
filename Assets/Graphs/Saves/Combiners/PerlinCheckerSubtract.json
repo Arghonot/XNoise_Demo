@@ -1,0 +1,176 @@
+{
+  "nodes": [
+    {
+      "id": "Root Module Base",
+      "guid": -9796,
+      "type": "Xnoise.RootModuleBase, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -200.0,
+        "normalized": {
+          "x": 0.813733459,
+          "y": -0.5812382,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 344.093018,
+        "sqrMagnitude": 118400.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Checker",
+      "guid": -11564,
+      "type": "Xnoise.CheckerNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -360.0,
+        "y": -264.0,
+        "normalized": {
+          "x": -0.806405,
+          "y": -0.591363668,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 446.4258,
+        "sqrMagnitude": 199296.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Perlin",
+      "guid": -11946,
+      "type": "Xnoise.PerlinNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -360.0,
+        "y": -184.0,
+        "normalized": {
+          "x": -0.890434742,
+          "y": -0.4551111,
+          "normalized": {
+            "x": -0.8904346,
+            "y": -0.455111027,
+            "normalized": {
+              "x": -0.8904347,
+              "y": -0.455111057,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 0.99999994,
+            "sqrMagnitude": 0.9999999
+          },
+          "magnitude": 1.00000012,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 404.2969,
+        "sqrMagnitude": 163456.0
+      },
+      "blackboardPosition": null,
+      "inputs": {
+        "frequency": 1.0,
+        "lacunarity": 1.2,
+        "persistence": 1.2,
+        "Octaves": 6,
+        "Seed": 2,
+        "Quality": 2
+      }
+    },
+    {
+      "id": "Substract",
+      "guid": -14454,
+      "type": "Xnoise.SubstractNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -72.0,
+        "y": -168.0,
+        "normalized": {
+          "x": -0.393919319,
+          "y": -0.919145048,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 182.778549,
+        "sqrMagnitude": 33408.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Renderer",
+      "guid": -17718,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -104.0,
+        "normalized": {
+          "x": 0.9374253,
+          "y": -0.348186553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 298.69046,
+        "sqrMagnitude": 89216.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Renderer",
+      "guid": -40862,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -88.0,
+        "y": 24.0,
+        "normalized": {
+          "x": -0.9647638,
+          "y": 0.2631174,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 91.214035,
+        "sqrMagnitude": 8320.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    }
+  ],
+  "connections": [
+    {
+      "fromNodeGuid": -14454,
+      "toNodeGuid": -9796,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": -11564,
+      "toNodeGuid": -14454,
+      "inputField": "SourceA"
+    },
+    {
+      "fromNodeGuid": -11946,
+      "toNodeGuid": -14454,
+      "inputField": "SourceB"
+    },
+    {
+      "fromNodeGuid": -14454,
+      "toNodeGuid": -17718,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": -11564,
+      "toNodeGuid": -40862,
+      "inputField": "Input"
+    }
+  ],
+  "blackboardPosition": {
+    "x": 632.0,
+    "y": -1064.0,
+    "normalized": {
+      "x": 0.5106881,
+      "y": -0.859766066,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 1237.5459,
+    "sqrMagnitude": 1531520.0
+  }
+}
