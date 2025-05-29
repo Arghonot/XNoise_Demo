@@ -37,7 +37,7 @@ namespace CustomUnitTesting
                 Stopwatch sw = Stopwatch.StartNew();
                 try
                 {
-                    XnoiseGraph graph = XNoiseGraphSelectionSaverLoader.ImportGraphFromJSON(jsonPath, graphOut);
+                    XnoiseGraph graph = XNoiseGraphSelectionSaverLoader.ImportSingleGraphFromJson(jsonPath, graphOut);
 
                     foreach (bool isGPU in new[] { true, false })
                     {

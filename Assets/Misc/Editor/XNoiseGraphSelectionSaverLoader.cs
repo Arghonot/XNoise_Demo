@@ -9,12 +9,13 @@ using UnityEngine;
 using XNode;
 using Xnoise;
 using Newtonsoft.Json;
+using static CustomUnitTesting.XNoiseGraphSelectionSaverLoader;
 
 namespace CustomUnitTesting
 {
     public static class XNoiseGraphSelectionSaverLoader
     {
-        public static void ExportSelectedGraphToJSON(NodeGraph graph)
+        public static void ExportSingleGraphToJson(NodeGraph graph)
         {
             var selectedNodes = UnityEditor.Selection.objects.OfType<XNode.Node>().ToList();
             if (selectedNodes.Count == 0)
@@ -90,23 +91,32 @@ namespace CustomUnitTesting
             }
         }
 
-        public static XnoiseGraph ImportGraphFromJSON(string openPath, string savePath)
+        public static XnoiseGraph ImportSingleGraphFromJson(string openPath, string savePath)
         {
             if (string.IsNullOrEmpty(openPath)) return null;
 
             string json = File.ReadAllText(openPath);
             GraphExport data = JsonConvert.DeserializeObject<GraphExport>(json);
-
             var graph = ScriptableObject.CreateInstance<XnoiseGraph>();
-
 
             if (string.IsNullOrEmpty(savePath)) return null;
 
             string fileName = Path.GetFileNameWithoutExtension(openPath);
             UnityEditor.AssetDatabase.CreateAsset(graph, "Assets" + savePath.Replace(Application.dataPath, "") + "/" + fileName + ".asset");
-
             Dictionary<int, XNode.Node> createdNodes = new Dictionary<int, XNode.Node>();
 
+            graph.Initialize();
+            CreateGraphNodes(graph, data, createdNodes);
+            HandleConnectionsBetweenNodes(data, createdNodes);
+
+            UnityEditor.EditorUtility.SetDirty(graph);
+            UnityEditor.AssetDatabase.SaveAssets();
+            Debug.Log("Graph successfully imported from JSON");
+            return graph;
+        }
+
+        private static void CreateGraphNodes(XnoiseGraph graph, GraphExport data, Dictionary<int, XNode.Node> createdNodes)
+        {
             foreach (var nodeExport in data.nodes)
             {
                 Type nodeType = ResolveType(nodeExport.type);
@@ -121,32 +131,40 @@ namespace CustomUnitTesting
                 node.position = nodeExport.position;
                 createdNodes[nodeExport.guid] = node;
 
-                foreach (var kvp in nodeExport.inputs)
+                HandleNodeInputs(nodeType, nodeExport, node);
+            }
+        }
+
+        private static void HandleNodeInputs(Type nodeType, NodeExport nodeExport, Node node)
+        {
+            foreach (var kvp in nodeExport.inputs)
+            {
+                FieldInfo field = nodeType.GetField(kvp.Key);
+                if (field != null && field.GetCustomAttribute(typeof(InputAttribute)) != null)
                 {
-                    FieldInfo field = nodeType.GetField(kvp.Key);
-                    if (field != null && field.GetCustomAttribute(typeof(InputAttribute)) != null)
+                    try
                     {
-                        try
+                        object value = kvp.Value;
+                        if (field.FieldType.IsEnum)
                         {
-                            object value = kvp.Value;
-                            if (field.FieldType.IsEnum)
-                            {
-                                value = Enum.ToObject(field.FieldType, value);
-                            }
-                            else
-                            {
-                                value = Convert.ChangeType(value, field.FieldType);
-                            }
-                            field.SetValue(node, value);
+                            value = Enum.ToObject(field.FieldType, value);
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Debug.LogWarning($"Failed to set input value '{kvp.Key}' on node '{node.name}': {ex.Message}");
+                            value = Convert.ChangeType(value, field.FieldType);
                         }
+                        field.SetValue(node, value);
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"Failed to set input value '{kvp.Key}' on node '{node.name}': {ex.Message}");
                     }
                 }
             }
+        }
 
+        private static void HandleConnectionsBetweenNodes(GraphExport data, Dictionary<int, XNode.Node> createdNodes)
+        {
             foreach (var conn in data.connections)
             {
                 if (createdNodes.TryGetValue(conn.fromNodeGuid, out var fromNode) &&
@@ -160,12 +178,6 @@ namespace CustomUnitTesting
                     }
                 }
             }
-
-            UnityEditor.EditorUtility.SetDirty(graph);
-            UnityEditor.AssetDatabase.SaveAssets();
-            graph.Initialize();
-            Debug.Log("Graph successfully imported from JSON");
-            return graph;
         }
 
         private static Type ResolveType(string typeName)

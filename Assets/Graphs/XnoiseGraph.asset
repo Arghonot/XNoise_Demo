@@ -395,14 +395,14 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   Space: 110
   renderMode: 1
-  projectionMode: 0
+  projectionMode: 1
   TexturePosition:
     serializedVersion: 2
     x: 14
     y: 210
     width: 180
     height: 90
-  RenderTime: 3
+  RenderTime: 4
 --- !u!114 &-5945594456680562644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,9 +902,6 @@ MonoBehaviour:
       - fieldName: Input
         node: {fileID: -7037459414150619247}
         reroutePoints: []
-      - fieldName: Input
-        node: {fileID: 2920492367633449389}
-        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
@@ -1133,7 +1130,7 @@ MonoBehaviour:
   m_Name: Const
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1080, y: -776}
+  position: {x: -344, y: -248}
   ports:
     keys:
     - Output
@@ -1143,7 +1140,10 @@ MonoBehaviour:
       _node: {fileID: -965580976401189551}
       _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: Input
+        node: {fileID: 1647942919761656212}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
@@ -1157,7 +1157,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
-  value: 1
+  value: 0.3
 --- !u!114 &-274935474191670759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,10 +1228,10 @@ MonoBehaviour:
   - {fileID: -1897255823756050242}
   - {fileID: 2325583028702490013}
   - {fileID: -3688430245137592906}
-  - {fileID: 2920492367633449389}
   - {fileID: -3779232043685458302}
   - {fileID: 1647942919761656212}
   - {fileID: -7037459414150619247}
+  - {fileID: 7267062876805426484}
   blackboard: {fileID: -9002731546404377073}
   originalStorage:
     GUID: 45a8b2bc-0727-49f9-a0f4-c0b15b7855ef
@@ -1265,6 +1265,12 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   root: {fileID: 8412861547965350615}
+  south: 90
+  north: -90
+  west: -180
+  east: 180
+  width: 512
+  Height: 512
 --- !u!114 &1560203147044248704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,7 +1354,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: 2920492367633449389}
+        node: {fileID: -965580976401189551}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -1394,14 +1400,14 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   Space: 110
   renderMode: 1
-  projectionMode: 0
+  projectionMode: 2
   TexturePosition:
     serializedVersion: 2
     x: 14
     y: 210
     width: 180
     height: 90
-  RenderTime: 5
+  RenderTime: 3
 --- !u!114 &1852377853902347156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,63 +1595,6 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
---- !u!114 &2920492367633449389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d611f8767cac8664288fff3748fbc000, type: 3}
-  m_Name: Turbulence
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -72, y: -168}
-  ports:
-    keys:
-    - Output
-    - Input
-    - Power
-    values:
-    - _fieldName: Output
-      _node: {fileID: 2920492367633449389}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 8412861547965350615}
-        reroutePoints: []
-      - fieldName: Input
-        node: {fileID: 1647942919761656212}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-    - _fieldName: Input
-      _node: {fileID: 2920492367633449389}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: -2168229256824372258}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 4
-      _dynamic: 0
-    - _fieldName: Power
-      _node: {fileID: 2920492367633449389}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-  Power: 1
 --- !u!114 &4080145843029939133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,6 +1828,38 @@ MonoBehaviour:
   displacement: 1.2
   Seed: 0
   distance: 0
+--- !u!114 &7267062876805426484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772901f1ae5a2524c8fd60a936ea97bd, type: 3}
+  m_Name: Simple Shader Renderer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 980.6756, y: -324.15533}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 7267062876805426484}
+      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  ShaderA: {fileID: 0}
+  frequency: 0
+  size: 0
+  tex: {fileID: 0}
+  PictureName: Test
 --- !u!114 &8214208042304664779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1994,10 +1975,7 @@ MonoBehaviour:
       _node: {fileID: 8412861547965350615}
       _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 2920492367633449389}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2

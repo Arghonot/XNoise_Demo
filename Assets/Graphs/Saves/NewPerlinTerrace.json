@@ -1,0 +1,147 @@
+{
+  "nodes": [
+    {
+      "id": "Renderer",
+      "guid": 31124,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -56.0,
+        "y": 104.0,
+        "normalized": {
+          "x": -0.4740998,
+          "y": 0.8804711,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 118.118584,
+        "sqrMagnitude": 13952.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Perlin",
+      "guid": 31120,
+      "type": "Xnoise.PerlinNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -344.0,
+        "y": -152.0,
+        "normalized": {
+          "x": -0.9146866,
+          "y": -0.404163867,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 376.085083,
+        "sqrMagnitude": 141440.0
+      },
+      "blackboardPosition": null,
+      "inputs": {
+        "frequency": 1.0,
+        "lacunarity": 1.2,
+        "persistence": 1.2,
+        "Octaves": 6,
+        "Seed": 2,
+        "Quality": 2
+      }
+    },
+    {
+      "id": "Terrace",
+      "guid": 31144,
+      "type": "Xnoise.TerraceNode, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": -56.0,
+        "y": -152.0,
+        "normalized": {
+          "x": -0.34570536,
+          "y": -0.9383431,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 161.987656,
+        "sqrMagnitude": 26240.0
+      },
+      "blackboardPosition": null,
+      "inputs": {
+        "controlPoints": [
+          0.2,
+          0.6,
+          0.7
+        ],
+        "inverted": false
+      }
+    },
+    {
+      "id": "Root Module Base",
+      "guid": 31130,
+      "type": "Xnoise.RootModuleBase, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -200.0,
+        "normalized": {
+          "x": 0.813733459,
+          "y": -0.5812382,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 344.093018,
+        "sqrMagnitude": 118400.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    },
+    {
+      "id": "Renderer",
+      "guid": 31126,
+      "type": "Xnoise.Renderer, Assembly-CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "position": {
+        "x": 280.0,
+        "y": -104.0,
+        "normalized": {
+          "x": 0.9374253,
+          "y": -0.348186553,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 298.69046,
+        "sqrMagnitude": 89216.0
+      },
+      "blackboardPosition": null,
+      "inputs": {}
+    }
+  ],
+  "connections": [
+    {
+      "fromNodeGuid": 31120,
+      "toNodeGuid": 31124,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": 31120,
+      "toNodeGuid": 31144,
+      "inputField": "InputModule"
+    },
+    {
+      "fromNodeGuid": 31144,
+      "toNodeGuid": 31130,
+      "inputField": "Input"
+    },
+    {
+      "fromNodeGuid": 31144,
+      "toNodeGuid": 31126,
+      "inputField": "Input"
+    }
+  ],
+  "blackboardPosition": {
+    "x": 632.0,
+    "y": -1064.0,
+    "normalized": {
+      "x": 0.5106881,
+      "y": -0.859766066,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 1237.5459,
+    "sqrMagnitude": 1531520.0
+  }
+}

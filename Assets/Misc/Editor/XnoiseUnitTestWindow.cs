@@ -36,14 +36,14 @@ namespace CustomUnitTesting
                     Debug.LogError("No graph selected.");
                     return;
                 }
-                XNoiseGraphSelectionSaverLoader.ExportSelectedGraphToJSON(_selectedGraph);
+                XNoiseGraphSelectionSaverLoader.ExportSingleGraphToJson(_selectedGraph);
             }
 
             if (GUILayout.Button("Import JSON to New Graph"))
             {
                 var openPath = UnityEditor.EditorUtility.OpenFilePanel("Load Graph JSON", Application.dataPath, "json");
                 var savePath = UnityEditor.EditorUtility.SaveFolderPanel("Select Folder To Save Graph", Application.dataPath, "");
-                XNoiseGraphSelectionSaverLoader.ImportGraphFromJSON(openPath, savePath);
+                XNoiseGraphSelectionSaverLoader.ImportSingleGraphFromJson(openPath, savePath);
             }
             GUILayout.Space(42f);
             if (GUILayout.Button("Run Unit Tests from Folder"))
