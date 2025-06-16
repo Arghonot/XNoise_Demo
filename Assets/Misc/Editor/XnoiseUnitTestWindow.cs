@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using XNode;
 using static XNode.Node;
 using Unity.Plastic.Newtonsoft.Json;
-using Xnoise;
+using XNoise;
 
 namespace CustomUnitTesting
 {

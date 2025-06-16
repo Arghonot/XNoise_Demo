@@ -4,8 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using Xnoise;
+using XNoise;
 
 namespace CustomUnitTesting
 {
@@ -41,7 +40,8 @@ namespace CustomUnitTesting
 
                     foreach (bool isGPU in new[] { true, false })
                     {
-                        Texture2D result = graph.Render(isGPU);
+                        graph.renderer.Render();
+                        Texture2D result = graph.renderer.tex;
                         if (result != null)
                         {
                             byte[] bytes = result.EncodeToPNG();
