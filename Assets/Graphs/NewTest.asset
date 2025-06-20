@@ -736,8 +736,6 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   root: {fileID: 1948999742650195090}
-  width: 512
-  Height: 512
 --- !u!114 &119824584208795484
 MonoBehaviour:
   m_ObjectHideFlags: 0

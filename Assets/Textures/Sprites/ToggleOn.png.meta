@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fcd5b58be2197748865400b14622d6d
+guid: 33b76571c36dd634ca565f637061e97d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CopyPixelated_0
+      name: ToggleOn_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
+        width: 96
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a6be6deac6d1b847961667eab45230d
-      internalID: 1656161634
+      spriteID: 3c41997b20b55144abacab159530d5d6
+      internalID: 1948920710
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 62a85e33ec20a684a87da99206f58cf6
+    spriteID: 5c473b34e4833c2488250a58dca20f8f
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CopyPixelated_0: 1656161634
+      ToggleOn_0: 1948920710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
