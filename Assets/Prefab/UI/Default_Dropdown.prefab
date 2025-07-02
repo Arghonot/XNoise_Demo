@@ -913,17 +913,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PERLIN
+  m_text: Perlin
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d6ef15467c079d46a3d23b75e143d05, type: 2}
-  m_sharedMaterial: {fileID: 6746555983500505241, guid: 6d6ef15467c079d46a3d23b75e143d05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6f789250e08eb0a4db0f150c3d0522a3, type: 2}
+  m_sharedMaterial: {fileID: -2469663290969794835, guid: 6f789250e08eb0a4db0f150c3d0522a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2606085154
-  m_fontColor: {r: 0.13333334, g: 0.7058824, b: 0.33333334, a: 0.60784316}
+    rgba: 4290624957
+  m_fontColor: {r: 0.7411765, g: 0.7411765, b: 0.7411765, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -940,8 +940,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: PERLIN
+    - m_Text: Perlin
       m_Image: {fileID: -1890110617, guid: 6868ad1dea8e5ff41945729cfb6a39a9, type: 3}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: VORONOI

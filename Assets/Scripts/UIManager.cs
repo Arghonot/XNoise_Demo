@@ -9,38 +9,70 @@ namespace XNoise_DemoWebglPlayer
     public class UIManager : MonoBehaviour
     {
         [SerializeField] private TMP_Dropdown _graphType;
+        public TMP_Dropdown graphType => _graphType;
         [SerializeField] private TMP_Dropdown _textureSize;
+        public TMP_Dropdown textureSize => _textureSize;
         [SerializeField] private Toggle _plusOne;
+        public Toggle plusOne => _plusOne;
         [SerializeField] private TMP_Dropdown _projectionType;
+        public TMP_Dropdown projectionType => _projectionType;
         [SerializeField] private TMP_Dropdown _gradiant;
+        public TMP_Dropdown gradiant => _gradiant;
         [SerializeField] private TMP_Dropdown _visualizerObject;
+        public TMP_Dropdown visualizerObject => _visualizerObject;
         [SerializeField] private Button _generate;
+        public Button generate => _generate;
         [SerializeField] private Button _saveButton;
+        public Button saveButton => _saveButton;
         [SerializeField] private Button _copySeed;
+        public Button copySeed => _copySeed;
         [SerializeField] private Toggle _renderView;
+        public Toggle renderView => _renderView;
         [SerializeField] private Toggle _graphView;
+        public Toggle graphView => _graphView;
         [SerializeField] private Toggle _randomSeed;
+        public Toggle randomSeed => _randomSeed;
         [SerializeField] private TMP_InputField _seed;
+        public TMP_InputField seed => _seed;
         [SerializeField] private TMP_InputField _customTextureWidth;
+        public TMP_InputField customTextureWidth => _customTextureWidth;
         [SerializeField] private TMP_InputField _customTextureHeight;
+        public TMP_InputField customTextureHeight => _customTextureHeight;
         [SerializeField] private GameObject _customTextureDimensionHolder;
+        public GameObject customTextureDimensionHolder => _customTextureDimensionHolder;
 
-        public static event UnityAction SaveButtonClicked;
-        public static event UnityAction GenerateButtonClicked;
-        public static event UnityAction CopyButtonClicked;
+        public static event Action SaveButtonClicked;
+        public static event Action GenerateButtonClicked;
+        public static event Action CopyButtonClicked;
 
-        public static event UnityAction<bool> PlusOneStateChanged;
-        public static event UnityAction<bool> RandomSeedStateChanged;
-        public static event UnityAction<bool> RenderSceneStateChanged; // graph or 3D scene render ?
+        public static event Action<bool> PlusOneStateChanged;
+        public static event Action<bool> RandomSeedStateChanged;
+        public static event Action<bool> RenderSceneStateChanged; // graph or 3D scene render ?
 
-        public static event UnityAction<int> SelectedGraphIndexChanged;
-        public static event UnityAction<int> SelectedTextureSizeIndexChanged;
-        public static event UnityAction<int> SelectedProjectionTypeIndexChanged;
-        public static event UnityAction<int> SelectedGradiantIndexChanged;
-        public static event UnityAction<int> SelectedSceneObjectChanged;
+        public static event Action<int> SelectedGraphIndexChanged;
+        public static event Action<int> SelectedTextureSizeIndexChanged;
+        public static event Action<int> SelectedProjectionTypeIndexChanged;
+        public static event Action<int> SelectedGradiantIndexChanged;
+        public static event Action<int> SelectedSceneObjectChanged;
 
         public static event Action<string, object> InputValueChanged;
 
+
+        private void TriggerSaveButtonClicked() => SaveButtonClicked?.Invoke();
+        private void TriggerGenerateButtonClicked() => GenerateButtonClicked?.Invoke();
+        private void TriggerCopyButtonClicked() => CopyButtonClicked?.Invoke();
+
+        private void TriggerPlusOneStateChanged(bool arg) => PlusOneStateChanged?.Invoke(arg);
+        private void TriggerRandomSeedStateChanged(bool arg) => RandomSeedStateChanged?.Invoke(arg);
+        private void TriggerRenderSceneStateChanged(bool arg) => RenderSceneStateChanged?.Invoke(arg);
+
+        private void TriggerSelectedGraphIndexChanged(int arg) => SelectedGraphIndexChanged?.Invoke(arg);
+        private void TriggerSelectedTextureSizeIndexChanged(int arg) => SelectedTextureSizeIndexChanged?.Invoke(arg);
+        private void TriggerSelectedProjectionTypeIndexChanged(int arg) => SelectedProjectionTypeIndexChanged?.Invoke(arg);
+        private void TriggerSelectedGradiantIndexChanged(int arg) => SelectedGradiantIndexChanged?.Invoke(arg);
+        private void TriggerSelectedSceneObjectChanged(int arg) => SelectedSceneObjectChanged?.Invoke(arg);
+
+        private void TriggerSelectedSceneObjectChanged(string arg0, object arg1) => InputValueChanged?.Invoke(arg0, arg1);
 
         public TMP_Dropdown getGraphTypeDropdown() => _graphType;
 
@@ -56,20 +88,20 @@ namespace XNoise_DemoWebglPlayer
 
         private void RegisterEvents()
         {
-            //_graphType.onValueChanged.AddListener(SelectedGraphIndexChanged);
-            _textureSize.onValueChanged.AddListener(SelectedTextureSizeIndexChanged);
-            _projectionType.onValueChanged.AddListener(SelectedProjectionTypeIndexChanged);
-            _gradiant.onValueChanged.AddListener(SelectedGradiantIndexChanged);
-            _visualizerObject.onValueChanged.AddListener(SelectedSceneObjectChanged);
+            _graphType.onValueChanged.AddListener(TriggerSelectedGraphIndexChanged);
+            _textureSize.onValueChanged.AddListener(TriggerSelectedTextureSizeIndexChanged);
+            _projectionType.onValueChanged.AddListener(TriggerSelectedProjectionTypeIndexChanged);
+            _gradiant.onValueChanged.AddListener(TriggerSelectedGradiantIndexChanged);
+            _visualizerObject.onValueChanged.AddListener(TriggerSelectedSceneObjectChanged);
         }
 
         private void UnregisterEvents()
         {
-            _graphType.onValueChanged.AddListener(SelectedGraphIndexChanged);
-            _textureSize.onValueChanged.AddListener(SelectedTextureSizeIndexChanged);
-            _projectionType.onValueChanged.AddListener(SelectedProjectionTypeIndexChanged);
-            _gradiant.onValueChanged.AddListener(SelectedGradiantIndexChanged);
-            _visualizerObject.onValueChanged.RemoveListener(SelectedSceneObjectChanged);
+            _graphType.onValueChanged.RemoveListener(TriggerSelectedGraphIndexChanged);
+            _textureSize.onValueChanged.RemoveListener(TriggerSelectedTextureSizeIndexChanged);
+            _projectionType.onValueChanged.RemoveListener(TriggerSelectedProjectionTypeIndexChanged);
+            _gradiant.onValueChanged.RemoveListener(TriggerSelectedGradiantIndexChanged);
+            _visualizerObject.onValueChanged.RemoveListener(TriggerSelectedSceneObjectChanged);
         }
     }
 }
