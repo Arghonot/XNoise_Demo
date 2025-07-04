@@ -26,7 +26,10 @@ MonoBehaviour:
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: d444e95d-f2fb-4e7f-9add-536f6d5b2104
+      Name: Seed
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -1933,7 +1936,10 @@ MonoBehaviour:
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: d444e95d-f2fb-4e7f-9add-536f6d5b2104
+      Name: Seed
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -1960,8 +1966,6 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   root: {fileID: 8412861547965350615}
-  width: 512
-  Height: 512
 --- !u!114 &958429839706407730
 MonoBehaviour:
   m_ObjectHideFlags: 0

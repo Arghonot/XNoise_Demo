@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: Blackboard
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 168}
+  position: {x: 536, y: -8}
   ports:
     keys: []
     values: []
@@ -447,7 +447,13 @@ MonoBehaviour:
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: 84e357bf-e3bb-4502-abec-307c2d7b3072
+      Name: Seed
+      Value: 0
+    - GUID: 21b4c9f4-c097-4559-8d2a-cd33455ea24e
+      Name: 
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -492,7 +498,13 @@ MonoBehaviour:
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: 84e357bf-e3bb-4502-abec-307c2d7b3072
+      Name: Seed
+      Value: 0
+    - GUID: 21b4c9f4-c097-4559-8d2a-cd33455ea24e
+      Name: 
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -519,8 +531,6 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   root: {fileID: 1917293608569466369}
-  width: 512
-  Height: 512
 --- !u!114 &714704974393262985
 MonoBehaviour:
   m_ObjectHideFlags: 0

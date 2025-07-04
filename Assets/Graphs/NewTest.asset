@@ -82,6 +82,46 @@ MonoBehaviour:
     width: 180
     height: 90
   RenderTime: 0
+--- !u!114 &-7058254946703244421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: 232}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -7058254946703244421}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Octaves
+        node: {fileID: -6921484142744912613}
+        reroutePoints: []
+      - fieldName: Octaves
+        node: {fileID: -2549252981150372131}
+        reroutePoints: []
+      - fieldName: Octaves
+        node: {fileID: 8164964367086351866}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 4
+  guid: 4a9f08e7-3348-46e8-85de-6a044f67a126
+  Name: Octave Base
+  Blackboard: {fileID: 119824584208795484}
 --- !u!114 &-7050266868975195320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +244,9 @@ MonoBehaviour:
       - fieldName: SourceA
         node: {fileID: 8672869909851241411}
         reroutePoints: []
+      - fieldName: Input
+        node: {fileID: 1948999742650195090}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
@@ -212,7 +255,10 @@ MonoBehaviour:
       _node: {fileID: -6921484142744912613}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -5969402172402668014}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -221,7 +267,10 @@ MonoBehaviour:
       _node: {fileID: -6921484142744912613}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4682047547769722826}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -230,7 +279,10 @@ MonoBehaviour:
       _node: {fileID: -6921484142744912613}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 8810203738478048478}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -239,7 +291,10 @@ MonoBehaviour:
       _node: {fileID: -6921484142744912613}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -7058254946703244421}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -248,7 +303,10 @@ MonoBehaviour:
       _node: {fileID: -6921484142744912613}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4866078937015827532}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -268,6 +326,126 @@ MonoBehaviour:
   Octaves: 5
   Seed: 1
   Quality: 0
+--- !u!114 &-5969402172402668014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: 312}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -5969402172402668014}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: frequency
+        node: {fileID: -6921484142744912613}
+        reroutePoints: []
+      - fieldName: frequency
+        node: {fileID: -2549252981150372131}
+        reroutePoints: []
+      - fieldName: frequency
+        node: {fileID: 8164964367086351866}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 1
+  guid: 8e6dcc3b-9210-4de8-9b69-1fca1c12c65e
+  Name: Frequency Base
+  Blackboard: {fileID: 119824584208795484}
+--- !u!114 &-4866078937015827532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: 152}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -4866078937015827532}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Seed
+        node: {fileID: -6921484142744912613}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: -2549252981150372131}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: 8164964367086351866}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 5
+  guid: 7fc2d3a8-d49a-4a81-b94e-d33843648274
+  Name: Seed
+  Blackboard: {fileID: 119824584208795484}
+--- !u!114 &-4682047547769722826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: 392}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -4682047547769722826}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: lacunarity
+        node: {fileID: -6921484142744912613}
+        reroutePoints: []
+      - fieldName: lacunarity
+        node: {fileID: -2549252981150372131}
+        reroutePoints: []
+      - fieldName: lacunarity
+        node: {fileID: 8164964367086351866}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 2
+  guid: 6a0c76d2-43f5-48f4-8efa-b84bfebaeab4
+  Name: Lacunarity Base
+  Blackboard: {fileID: 119824584208795484}
 --- !u!114 &-3378109945068278823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +557,10 @@ MonoBehaviour:
       _node: {fileID: -2549252981150372131}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -5969402172402668014}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -388,7 +569,10 @@ MonoBehaviour:
       _node: {fileID: -2549252981150372131}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4682047547769722826}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -397,7 +581,10 @@ MonoBehaviour:
       _node: {fileID: -2549252981150372131}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -7058254946703244421}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -406,7 +593,10 @@ MonoBehaviour:
       _node: {fileID: -2549252981150372131}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4866078937015827532}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -665,6 +855,11 @@ MonoBehaviour:
   - {fileID: -1901361041524013240}
   - {fileID: 5762335670487527813}
   - {fileID: 2684521790105206598}
+  - {fileID: -5969402172402668014}
+  - {fileID: -4682047547769722826}
+  - {fileID: 8810203738478048478}
+  - {fileID: -7058254946703244421}
+  - {fileID: -4866078937015827532}
   blackboard: {fileID: 119824584208795484}
   originalStorage:
     GUID: c1587ea4-b212-4d62-a6c9-dc7f32c1dad9
@@ -673,24 +868,24 @@ MonoBehaviour:
     Bools:
     - GUID: 8c6861e5-926e-429d-ac35-d8e8e6fecfb5
       Name: Distance Base
-      Value: 1
+      Value: 0
     Ints:
     - GUID: 4a9f08e7-3348-46e8-85de-6a044f67a126
       Name: Octave Base
-      Value: 0
+      Value: 3
     - GUID: 7fc2d3a8-d49a-4a81-b94e-d33843648274
-      Name: Seed Base
-      Value: 0
+      Name: Seed
+      Value: 618840
     Doubles:
     - GUID: 8e6dcc3b-9210-4de8-9b69-1fca1c12c65e
       Name: Frequency Base
-      Value: 0
+      Value: 1
     - GUID: 6a0c76d2-43f5-48f4-8efa-b84bfebaeab4
       Name: Lacunarity Base
-      Value: 0.77
+      Value: 1
     - GUID: 1bd501f6-a3db-4a33-a7b3-229f75b04ca8
       Name: Persistence Base
-      Value: 0
+      Value: 1
     Strings: []
     AnimationCurves:
     - GUID: c9ba0a3b-2479-46f6-a6f8-ebff9f97910a
@@ -764,24 +959,24 @@ MonoBehaviour:
     Bools:
     - GUID: 8c6861e5-926e-429d-ac35-d8e8e6fecfb5
       Name: Distance Base
-      Value: 1
+      Value: 0
     Ints:
     - GUID: 4a9f08e7-3348-46e8-85de-6a044f67a126
       Name: Octave Base
-      Value: 0
+      Value: 3
     - GUID: 7fc2d3a8-d49a-4a81-b94e-d33843648274
-      Name: Seed Base
-      Value: 0
+      Name: Seed
+      Value: 618840
     Doubles:
     - GUID: 8e6dcc3b-9210-4de8-9b69-1fca1c12c65e
       Name: Frequency Base
-      Value: 0
+      Value: 1
     - GUID: 6a0c76d2-43f5-48f4-8efa-b84bfebaeab4
       Name: Lacunarity Base
-      Value: 0.77
+      Value: 1
     - GUID: 1bd501f6-a3db-4a33-a7b3-229f75b04ca8
       Name: Persistence Base
-      Value: 0
+      Value: 1
     Strings: []
     AnimationCurves:
     - GUID: c9ba0a3b-2479-46f6-a6f8-ebff9f97910a
@@ -823,7 +1018,7 @@ MonoBehaviour:
   m_Name: Root Module Base
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1176, y: 968}
+  position: {x: 1128, y: 744}
   ports:
     keys:
     - Input
@@ -834,7 +1029,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: 5610754241699283462}
+        node: {fileID: -6921484142744912613}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -1035,10 +1230,7 @@ MonoBehaviour:
       _node: {fileID: 5610754241699283462}
       _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 1948999742650195090}
-        reroutePoints: []
+      connections: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
@@ -1332,7 +1524,10 @@ MonoBehaviour:
       _node: {fileID: 8164964367086351866}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -5969402172402668014}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -1341,7 +1536,10 @@ MonoBehaviour:
       _node: {fileID: 8164964367086351866}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4682047547769722826}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -1350,7 +1548,10 @@ MonoBehaviour:
       _node: {fileID: 8164964367086351866}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 8810203738478048478}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -1359,7 +1560,10 @@ MonoBehaviour:
       _node: {fileID: 8164964367086351866}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -7058254946703244421}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -1368,7 +1572,10 @@ MonoBehaviour:
       _node: {fileID: 8164964367086351866}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4866078937015827532}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -1447,3 +1654,40 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+--- !u!114 &8810203738478048478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -696, y: 472}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 8810203738478048478}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: persistence
+        node: {fileID: 8164964367086351866}
+        reroutePoints: []
+      - fieldName: persistence
+        node: {fileID: -6921484142744912613}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 3
+  guid: 1bd501f6-a3db-4a33-a7b3-229f75b04ca8
+  Name: Persistence Base
+  Blackboard: {fileID: 119824584208795484}

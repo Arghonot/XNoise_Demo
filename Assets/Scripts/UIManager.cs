@@ -1,7 +1,6 @@
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace XNoise_DemoWebglPlayer
@@ -72,7 +71,6 @@ namespace XNoise_DemoWebglPlayer
         private void TriggerSelectedGradiantIndexChanged(int arg) => SelectedGradiantIndexChanged?.Invoke(arg);
         private void TriggerSelectedSceneObjectChanged(int arg) => SelectedSceneObjectChanged?.Invoke(arg);
 
-        private void TriggerSelectedSceneObjectChanged(string arg0, object arg1) => InputValueChanged?.Invoke(arg0, arg1);
 
         public TMP_Dropdown getGraphTypeDropdown() => _graphType;
 
@@ -88,6 +86,12 @@ namespace XNoise_DemoWebglPlayer
 
         private void RegisterEvents()
         {
+            _saveButton.onClick.AddListener(TriggerSaveButtonClicked);
+            _generate.onClick.AddListener(TriggerGenerateButtonClicked);
+            _copySeed.onClick.AddListener(TriggerCopyButtonClicked);
+            _plusOne.onValueChanged.AddListener(TriggerPlusOneStateChanged);
+            _randomSeed.onValueChanged.AddListener(TriggerRandomSeedStateChanged);
+            _renderView.onValueChanged.AddListener(TriggerRenderSceneStateChanged);
             _graphType.onValueChanged.AddListener(TriggerSelectedGraphIndexChanged);
             _textureSize.onValueChanged.AddListener(TriggerSelectedTextureSizeIndexChanged);
             _projectionType.onValueChanged.AddListener(TriggerSelectedProjectionTypeIndexChanged);
@@ -97,6 +101,12 @@ namespace XNoise_DemoWebglPlayer
 
         private void UnregisterEvents()
         {
+            _saveButton.onClick.RemoveListener(TriggerSaveButtonClicked);
+            _generate.onClick.RemoveListener(TriggerGenerateButtonClicked);
+            _copySeed.onClick.RemoveListener(TriggerCopyButtonClicked);
+            _plusOne.onValueChanged.RemoveListener(TriggerPlusOneStateChanged);
+            _randomSeed.onValueChanged.RemoveListener(TriggerRandomSeedStateChanged);
+            _renderView.onValueChanged.RemoveListener(TriggerRenderSceneStateChanged);
             _graphType.onValueChanged.RemoveListener(TriggerSelectedGraphIndexChanged);
             _textureSize.onValueChanged.RemoveListener(TriggerSelectedTextureSizeIndexChanged);
             _projectionType.onValueChanged.RemoveListener(TriggerSelectedProjectionTypeIndexChanged);

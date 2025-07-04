@@ -1,3 +1,4 @@
+using CustomGraph;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,10 @@ namespace XNoise_DemoWebglPlayer
 {
     public class GraphLibrary : MonoBehaviour
     {
+        public static XnoiseGraph CurrentGraph;
+        public static GraphVariables CurrentEditedGraphStorage => CurrentGraph.originalStorage;
+        public static event Action<GraphVariables> OnSelectedGraphChanged;
+
         [Serializable]
         public class GraphAndMetadata
         {
@@ -21,9 +26,22 @@ namespace XNoise_DemoWebglPlayer
         [SerializeField] private List<GraphAndMetadata> _graphs;
         [SerializeField] private UIManager _UIManager;
 
+        private void TriggerSelectedGraphChanged(int arg)
+        {
+            CurrentGraph = _graphs[arg].graph;
+            OnSelectedGraphChanged?.Invoke(_graphs[_UIManager.getGraphTypeDropdown().value].graph.originalStorage);
+        }
+
         private void Awake()
         {
+            CurrentGraph = _graphs[0].graph;
             FillInGraphTypesData();
+            _UIManager.getGraphTypeDropdown().onValueChanged.AddListener(TriggerSelectedGraphChanged);
+        }
+
+        private void OnDestroy()
+        {
+            _UIManager.getGraphTypeDropdown().onValueChanged.RemoveListener(TriggerSelectedGraphChanged);
         }
 
         private void FillInGraphTypesData()
