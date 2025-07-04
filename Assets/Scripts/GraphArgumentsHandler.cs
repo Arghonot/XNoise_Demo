@@ -48,9 +48,8 @@ namespace XNoise_DemoWebglPlayer
                 }
             }
 
-            SetupNavigation(previousRow, FirstRow);
-
-            OnFinishedLoadingArguments?.Invoke(firstSelectable);
+            if (previousRow != null  && FirstRow != null) SetupNavigation(previousRow, FirstRow);
+            if (firstSelectable != null) OnFinishedLoadingArguments?.Invoke(firstSelectable);
         }
 
         private GraphVariableFieldUI GetCorrespondingRow(GraphVariables obj, VariableStorageRoot item)

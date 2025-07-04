@@ -10,13 +10,15 @@ namespace XNoise_DemoWebglPlayer
         public static event Action OnPressedS;
         public static event Action OnPressedG;
         public static event Action OnPressedR;
+        public static event Action OnPressedT;
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Tab)) OnPressedTab?.Invoke();
-            if (Input.GetKeyDown(KeyCode.S)) OnPressedS?.Invoke();
-            if (Input.GetKeyDown(KeyCode.G)) OnPressedG?.Invoke();
-            if (Input.GetKeyDown(KeyCode.R)) OnPressedR?.Invoke();
+            if (Input.GetKeyUp(KeyCode.Tab)) OnPressedTab?.Invoke();
+            if (Input.GetKeyUp(KeyCode.S)) OnPressedS?.Invoke();
+            if (Input.GetKeyUp(KeyCode.G)) OnPressedG?.Invoke();
+            if (Input.GetKeyUp(KeyCode.R)) OnPressedR?.Invoke();
+            if (Input.GetKeyUp(KeyCode.T)) OnPressedT?.Invoke();
         }
     }
 }

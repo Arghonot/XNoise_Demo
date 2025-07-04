@@ -8,6 +8,7 @@ using UnityEngine;
 using XNode;
 using XNoise;
 using Newtonsoft.Json;
+using UnityEngine.Analytics;
 
 namespace CustomUnitTesting
 {
@@ -117,19 +118,23 @@ namespace CustomUnitTesting
         {
             foreach (var nodeExport in data.nodes)
             {
-                Type nodeType = ResolveType(nodeExport.type);
-                if (nodeType == null)
+                if (!nodeExport.type.Contains("Xnoise.RootModuleBase"))
                 {
-                    Debug.LogError("Could not find type: " + nodeExport.type);
-                    continue;
+                    nodeExport.type = nodeExport.type.Replace("Xnoise", "XNoise").Replace("Renderer", "RendererNode").Replace("SubstractNode", "SubtractNode");
+                    Type nodeType = ResolveType(nodeExport.type);
+                    if (nodeType == null)
+                    {
+                        Debug.LogError("Could not find type: " + nodeExport.type);
+                        continue;
+                    }
+
+                    var node = graph.AddNode(nodeType);
+                    node.name = nodeExport.id;
+                    node.position = nodeExport.position;
+                    createdNodes[nodeExport.guid] = node;
+
+                    HandleNodeInputs(nodeType, nodeExport, node);
                 }
-
-                var node = graph.AddNode(nodeType);
-                node.name = nodeExport.id;
-                node.position = nodeExport.position;
-                createdNodes[nodeExport.guid] = node;
-
-                HandleNodeInputs(nodeType, nodeExport, node);
             }
         }
 
@@ -180,6 +185,7 @@ namespace CustomUnitTesting
 
         private static Type ResolveType(string typeName)
         {
+
             Type type = Type.GetType(typeName);
             if (type != null) return type;
 

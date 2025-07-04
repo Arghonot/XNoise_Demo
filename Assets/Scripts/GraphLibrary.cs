@@ -12,6 +12,7 @@ namespace XNoise_DemoWebglPlayer
     public class GraphLibrary : MonoBehaviour
     {
         public static XnoiseGraph CurrentGraph;
+        public static Sprite CurrentGraphImage;
         public static GraphVariables CurrentEditedGraphStorage => CurrentGraph.originalStorage;
         public static event Action<GraphVariables> OnSelectedGraphChanged;
 
@@ -24,29 +25,30 @@ namespace XNoise_DemoWebglPlayer
         }
 
         [SerializeField] private List<GraphAndMetadata> _graphs;
-        [SerializeField] private UIManager _UIManager;
+        [SerializeField] private UIManager _uiManager;
 
         private void TriggerSelectedGraphChanged(int arg)
         {
             CurrentGraph = _graphs[arg].graph;
-            OnSelectedGraphChanged?.Invoke(_graphs[_UIManager.getGraphTypeDropdown().value].graph.originalStorage);
+            CurrentGraphImage = _graphs[arg].graphPreview;
+            OnSelectedGraphChanged?.Invoke(_graphs[arg].graph.originalStorage);
         }
 
         private void Awake()
         {
-            CurrentGraph = _graphs[0].graph;
+            TriggerSelectedGraphChanged(0);
             FillInGraphTypesData();
-            _UIManager.getGraphTypeDropdown().onValueChanged.AddListener(TriggerSelectedGraphChanged);
+            UIManager.SelectedGraphIndexChanged += TriggerSelectedGraphChanged;
         }
 
         private void OnDestroy()
         {
-            _UIManager.getGraphTypeDropdown().onValueChanged.RemoveListener(TriggerSelectedGraphChanged);
+            UIManager.SelectedGraphIndexChanged -= TriggerSelectedGraphChanged;
         }
 
         private void FillInGraphTypesData()
         {
-            var graphTypeDropdown = _UIManager.getGraphTypeDropdown();
+            var graphTypeDropdown = _uiManager.getGraphTypeDropdown();
 
             graphTypeDropdown.ClearOptions();
 

@@ -8,6 +8,7 @@ namespace XNoise_DemoWebglPlayer
     {
         [SerializeField] private FloatVariableFieldUI _seedHandler;
         [SerializeField] private UIManager _uiManager;
+        [SerializeField] private GameObject _blocker;
 
         private void Start()
         {
@@ -32,13 +33,16 @@ namespace XNoise_DemoWebglPlayer
 
         private void GenerateNewSeed()
         {
-            if (_uiManager.randomSeed.isOn) _seedHandler.SetValue(((int)Random.Range(0, 999999)).ToString());
+            if (_uiManager.randomSeed.isOn) _seedHandler.SetValue(((int)Random.Range(0, 9999)).ToString());
         }
 
         private void RefreshSeed(bool obj) => GenerateNewSeed();
 
         private void SetupSeedField()
         {
+            _blocker.SetActive(!GraphLibrary.CurrentEditedGraphStorage.ContainName("Seed"));
+
+            if (_blocker.active) return;
             var seed = GraphLibrary.CurrentEditedGraphStorage.GetContainerInstance(GraphLibrary.CurrentEditedGraphStorage.GetGUIDFromName("Seed"));
             _seedHandler.Setup(seed.Name, seed.GUID, seed.GetValue());
         }
