@@ -1,3 +1,4 @@
+using LibNoise;
 using UnityEngine;
 
 namespace XNoise_DemoWebglPlayer
@@ -6,7 +7,7 @@ namespace XNoise_DemoWebglPlayer
     {
         // use render tex directly to speed up process
         private Texture2D output;
-        [SerializeField] private Material _3dObjectMaterial;
+        [SerializeField] private Material[] _materials;
 
         private void Awake()
         {
@@ -18,6 +19,8 @@ namespace XNoise_DemoWebglPlayer
             UIManager.SelectedGradiantIndexChanged += IntEventReceivedHandler;
             UIManager.PlusOneStateChanged += BoolEventReceivedHandler;
             UIManager.RandomSeedStateChanged += BoolEventReceivedHandler;
+            UIManager.TextureHeightOrWidthChanged += SimpleEventReceivedHandler;
+
         }
 
 
@@ -31,6 +34,7 @@ namespace XNoise_DemoWebglPlayer
             UIManager.SelectedGradiantIndexChanged -= IntEventReceivedHandler;
             UIManager.PlusOneStateChanged -= BoolEventReceivedHandler;
             UIManager.RandomSeedStateChanged -= BoolEventReceivedHandler;
+            UIManager.TextureHeightOrWidthChanged -= SimpleEventReceivedHandler;
         }
 
         private void SimpleEventReceivedHandler() => this.enabled = true;
@@ -53,8 +57,23 @@ namespace XNoise_DemoWebglPlayer
             graph.renderer.Height = (int)TextureSizeHandler.CurrentResolution.y;
             graph.renderer.projectionMode = ProjectionHandler.ProjectionType;
 
+            var root = graph.Run(GraphArgumentsHandler.Variables) as SerializableModuleBase;
+            graph.renderer.input = root;
+            print("-------------------- COPY --------------------");
+            GraphArgumentsHandler.Variables.DebugDictionnaryInDepth();
+            print("-------------------- ORIGINAL --------------------");
+            graph.originalStorage.DebugDictionnaryInDepth();
             graph.renderer.RenderGPU();
-            _3dObjectMaterial.SetTexture("_Input", graph.renderer.rtex);
+            UpdateAllMaterials(graph.renderer.rtex);
+        }
+
+        private void UpdateAllMaterials(RenderTexture rtex)
+        {
+            for (int i = 0; i < _materials.Length; i++)
+            {
+                _materials[i].SetTexture("_MainTex", rtex);
+                _materials[i].SetTexture("_Gradient", GradiantHandler.CurrentGradient.texture);
+            }
         }
     }
 }

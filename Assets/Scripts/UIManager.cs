@@ -19,6 +19,8 @@ namespace XNoise_DemoWebglPlayer
         public TMP_Dropdown gradiant => _gradiant;
         [SerializeField] private TMP_Dropdown _visualizerObject;
         public TMP_Dropdown visualizerObject => _visualizerObject;
+        [SerializeField] private Button _openPortfolio;
+        public Button openPortfolio => _openPortfolio;
         [SerializeField] private Button _generate;
         public Button generate => _generate;
         [SerializeField] private Button _saveButton;
@@ -40,9 +42,11 @@ namespace XNoise_DemoWebglPlayer
         [SerializeField] private GameObject _customTextureDimensionHolder;
         public GameObject customTextureDimensionHolder => _customTextureDimensionHolder;
 
-        public static event Action SaveButtonClicked;
+        public static event Action openPortfolioButtonClicked;
+        public static event Action downloadButtonClicked;
         public static event Action GenerateButtonClicked;
         public static event Action CopyButtonClicked;
+        public static event Action TextureHeightOrWidthChanged;
 
         public static event Action<bool> PlusOneStateChanged;
         public static event Action<bool> RandomSeedStateChanged;
@@ -56,10 +60,11 @@ namespace XNoise_DemoWebglPlayer
 
         public static event Action<string, object> InputValueChanged;
 
-
-        private void TriggerSaveButtonClicked() => SaveButtonClicked?.Invoke();
+        private void TriggerOpenPortfolioButtonClicked() => openPortfolioButtonClicked?.Invoke();
+        private void TriggerSaveButtonClicked() => downloadButtonClicked?.Invoke();
         private void TriggerGenerateButtonClicked() => GenerateButtonClicked?.Invoke();
         private void TriggerCopyButtonClicked() => CopyButtonClicked?.Invoke();
+        private void TriggerTextureHeightOrWidthChanged(string arg) => TextureHeightOrWidthChanged?.Invoke();
 
         private void TriggerPlusOneStateChanged(bool arg) => PlusOneStateChanged?.Invoke(arg);
         private void TriggerRandomSeedStateChanged(bool arg) => RandomSeedStateChanged?.Invoke(arg);
@@ -86,6 +91,7 @@ namespace XNoise_DemoWebglPlayer
 
         private void RegisterEvents()
         {
+            _openPortfolio.onClick.AddListener(TriggerOpenPortfolioButtonClicked);
             _saveButton.onClick.AddListener(TriggerSaveButtonClicked);
             _generate.onClick.AddListener(TriggerGenerateButtonClicked);
             _copySeed.onClick.AddListener(TriggerCopyButtonClicked);
@@ -97,10 +103,13 @@ namespace XNoise_DemoWebglPlayer
             _projectionType.onValueChanged.AddListener(TriggerSelectedProjectionTypeIndexChanged);
             _gradiant.onValueChanged.AddListener(TriggerSelectedGradiantIndexChanged);
             _visualizerObject.onValueChanged.AddListener(TriggerSelectedSceneObjectChanged);
+            _customTextureWidth.onEndEdit.AddListener(TriggerTextureHeightOrWidthChanged);
+            _customTextureHeight.onEndEdit.AddListener(TriggerTextureHeightOrWidthChanged);
         }
 
         private void UnregisterEvents()
         {
+            _openPortfolio.onClick.RemoveListener(TriggerOpenPortfolioButtonClicked);
             _saveButton.onClick.RemoveListener(TriggerSaveButtonClicked);
             _generate.onClick.RemoveListener(TriggerGenerateButtonClicked);
             _copySeed.onClick.RemoveListener(TriggerCopyButtonClicked);
@@ -112,6 +121,8 @@ namespace XNoise_DemoWebglPlayer
             _projectionType.onValueChanged.RemoveListener(TriggerSelectedProjectionTypeIndexChanged);
             _gradiant.onValueChanged.RemoveListener(TriggerSelectedGradiantIndexChanged);
             _visualizerObject.onValueChanged.RemoveListener(TriggerSelectedSceneObjectChanged);
+            _customTextureWidth.onEndEdit.RemoveListener(TriggerTextureHeightOrWidthChanged);
+            _customTextureHeight.onEndEdit.RemoveListener(TriggerTextureHeightOrWidthChanged);
         }
     }
 }

@@ -7,13 +7,12 @@ namespace XNoise_DemoWebglPlayer
     {
         public static Sprite CurrentGradient;
 
-        [SerializeField] private UIManager _uiManager;
+        private UIManager _uiManager;
         [SerializeField] private Sprite[] _gradients;
-        [SerializeField] private Material _objectsMaterial;
-
 
         private void Awake()
         {
+            _uiManager = GetComponent<UIManager>();
             SetupGradientDropdown();
             UpdateSelectedGradient(0);
             UIManager.SelectedGradiantIndexChanged += UpdateSelectedGradient;
@@ -47,10 +46,6 @@ namespace XNoise_DemoWebglPlayer
             _uiManager.gradiant.AddOptions(options);
         }
 
-        private void UpdateSelectedGradient(int obj)
-        {
-            CurrentGradient = _gradients[_uiManager.gradiant.value];
-            _objectsMaterial.SetTexture("_Gradient", CurrentGradient.texture);
-        }
+        private void UpdateSelectedGradient(int obj) => CurrentGradient = _gradients[_uiManager.gradiant.value];
     }
 }

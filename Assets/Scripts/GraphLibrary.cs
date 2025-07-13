@@ -25,7 +25,7 @@ namespace XNoise_DemoWebglPlayer
         }
 
         [SerializeField] private List<GraphAndMetadata> _graphs;
-        [SerializeField] private UIManager _uiManager;
+        private UIManager _uiManager;
 
         private void TriggerSelectedGraphChanged(int arg)
         {
@@ -36,6 +36,7 @@ namespace XNoise_DemoWebglPlayer
 
         private void Awake()
         {
+            _uiManager = GetComponent<UIManager>();
             TriggerSelectedGraphChanged(0);
             FillInGraphTypesData();
             UIManager.SelectedGraphIndexChanged += TriggerSelectedGraphChanged;
