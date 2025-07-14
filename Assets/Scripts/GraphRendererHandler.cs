@@ -57,12 +57,11 @@ namespace XNoise_DemoWebglPlayer
             graph.renderer.Height = (int)TextureSizeHandler.CurrentResolution.y;
             graph.renderer.projectionMode = ProjectionHandler.ProjectionType;
 
-            var root = graph.Run(GraphArgumentsHandler.Variables) as SerializableModuleBase;
-            graph.renderer.input = root;
-            print("-------------------- COPY --------------------");
-            GraphArgumentsHandler.Variables.DebugDictionnaryInDepth();
-            print("-------------------- ORIGINAL --------------------");
-            graph.originalStorage.DebugDictionnaryInDepth();
+            //graph.runtimeStorage = GraphArgumentsHandler.Variables;
+            //print("-------------------- COPY --------------------");
+            //GraphArgumentsHandler.Variables.DebugDictionnaryInDepth();
+            //print("-------------------- ORIGINAL --------------------");
+            //graph.originalStorage.DebugDictionnaryInDepth();
             graph.renderer.RenderGPU();
             UpdateAllMaterials(graph.renderer.rtex);
         }

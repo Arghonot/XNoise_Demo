@@ -1,84 +1,60 @@
 using CustomGraph;
 using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
+using static UnityEngine.Rendering.DebugUI.Table;
 
 namespace XNoise_DemoWebglPlayer
 {
+
+
     public class GraphArgumentsHandler : MonoBehaviour
     {
         public static event Action<Selectable> OnFinishedLoadingArguments;
-        public static GraphVariables Variables;
 
         [SerializeField] private VariableRowPool _pooler;
-        [SerializeField] private Transform _rowsHolder;
 
         private void Start()
         {
             GraphLibrary.OnSelectedGraphChanged += LoadNewArguments;
-            Variables = GraphLibrary.CurrentEditedGraphStorage.CreateDeepCopy();
-            RefreshArguments();
+            RefreshArguments(GraphLibrary.CurrentEditedGraphStorage);
         }
-
         private void OnDestroy() => GraphLibrary.OnSelectedGraphChanged -= LoadNewArguments;
 
         private void LoadNewArguments(CustomGraph.GraphVariables obj)
         {
-            Variables = obj.CreateDeepCopy();
-
             UnloadPreviousArguments();
-            RefreshArguments();
+            RefreshArguments(obj);
         }
 
-        private void RefreshArguments()
+        private void RefreshArguments(CustomGraph.GraphVariables obj)
         {
-            foreach (var item in Variables)
+            Selectable firstSelectable = null;
+            GameObject FirstRow = null;
+            GameObject previousRow = null;
+
+            foreach (var item in obj)
             {
                 if (item.Name == "Seed") continue;
-                GraphVariableFieldUI row = GetCorrespondingRow(item);
+                GraphVariableFieldUI row = GetCorrespondingRow(obj, item);
 
                 if (row != null)
                 {
-                    row.Setup(item.Name, item.GUID, item.GetValue());
+                    SetupItem(row, item, ref firstSelectable, ref previousRow);
+                    if (FirstRow == null) FirstRow = row.gameObject;
+                    SetupItem(row, item, ref firstSelectable, ref previousRow);
                 }
             }
 
-            SetupAllRowsNavigation();
-            if (_rowsHolder.childCount > 0) OnFinishedLoadingArguments?.Invoke(_rowsHolder.GetChild(0).GetComponentInChildren<Selectable>(false));
+            if (previousRow != null && FirstRow != null) SetupNavigation(previousRow, FirstRow);
+            if (firstSelectable != null) OnFinishedLoadingArguments?.Invoke(firstSelectable);
         }
 
-        private void SetupAllRowsNavigation()
+        private GraphVariableFieldUI GetCorrespondingRow(GraphVariables obj, VariableStorageRoot item)
         {
-            // Cache all active child GameObjects
-            List<GameObject> activeRows = new List<GameObject>();
-
-            for (int i = 0; i < _rowsHolder.childCount; i++)
-            {
-                Transform child = _rowsHolder.GetChild(i);
-                if (child.gameObject.activeSelf)
-                {
-                    activeRows.Add(child.gameObject);
-                }
-            }
-
-            int activeCount = activeRows.Count;
-
-            if (activeCount < 2) return;
-
-            // Loop through and setup navigation for each pair
-            for (int i = 0; i < activeCount; i++)
-            {
-                int nextIndex = (i + 1) % activeCount;
-                SetupNavigation(activeRows[i], activeRows[nextIndex]);
-            }
-        }
-
-        // todo replace getcomponent by a dictionnary use 
-        private GraphVariableFieldUI GetCorrespondingRow(VariableStorageRoot item)
-        {
-            var storedType = Variables.GetContainedType(item.GUID);
+            var storedType = obj.GetContainedType(item.GUID);
 
             if (storedType == typeof(float) || storedType == typeof(double) || storedType == typeof(int))
             {
@@ -90,6 +66,14 @@ namespace XNoise_DemoWebglPlayer
             }
 
             return null;
+        }
+
+        private void SetupItem(GraphVariableFieldUI row, VariableStorageRoot item, ref Selectable firstSelectable, ref GameObject previousRow)
+        {
+            row.Setup(item.Name, item.GUID, item.GetValue());
+            if (firstSelectable == null) firstSelectable = row.GetComponentInChildren<Selectable>();
+            if (previousRow != null) SetupNavigation(previousRow, row.gameObject);
+            previousRow = row.gameObject;
         }
 
         private void SetupNavigation(GameObject A, GameObject B)

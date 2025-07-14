@@ -32,8 +32,7 @@ MonoBehaviour:
       _dynamic: 1
   VariableIndex: 1
   _guid: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
-  _name: 2
-  Blackboard: {fileID: -2002245138932029626}
+  _variableName: 
 --- !u!114 &-2213831091490570724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +65,7 @@ MonoBehaviour:
       _dynamic: 1
   VariableIndex: 3
   _guid: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
-  _name: 4
-  Blackboard: {fileID: -2002245138932029626}
+  _variableName: 
 --- !u!114 &-2002245138932029626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,20 +95,20 @@ MonoBehaviour:
     Ints:
     - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
       Name: Octaves
-      Value: 6
+      Value: 1
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
       Value: 1
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 2
+      Value: 1
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 1
+      Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 0
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -149,20 +147,20 @@ MonoBehaviour:
     Ints:
     - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
       Name: Octaves
-      Value: 6
+      Value: 1
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
       Value: 1
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 2
+      Value: 1
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 1
+      Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 0
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -220,8 +218,7 @@ MonoBehaviour:
       _dynamic: 1
   VariableIndex: 2
   _guid: 7b48d4be-957f-40d6-9bb1-0680053bc418
-  _name: 3
-  Blackboard: {fileID: -2002245138932029626}
+  _variableName: 
 --- !u!114 &1501263510569520547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,8 +281,7 @@ MonoBehaviour:
       _dynamic: 1
   VariableIndex: 4
   _guid: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
-  _name: 5
-  Blackboard: {fileID: -2002245138932029626}
+  _variableName: 
 --- !u!114 &2547918394936387832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,8 +314,7 @@ MonoBehaviour:
       _dynamic: 1
   VariableIndex: 0
   _guid: d6f58061-0716-44da-a1e2-c1c35709aea9
-  _name: 1
-  Blackboard: {fileID: -2002245138932029626}
+  _variableName: 
 --- !u!114 &8234533871660998660
 MonoBehaviour:
   m_ObjectHideFlags: 0
