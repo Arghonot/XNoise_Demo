@@ -1,10 +1,7 @@
 using CustomGraph;
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 namespace XNoise_DemoWebglPlayer
 {
@@ -13,32 +10,33 @@ namespace XNoise_DemoWebglPlayer
     public class GraphArgumentsHandler : MonoBehaviour
     {
         public static event Action<Selectable> OnFinishedLoadingArguments;
-
         [SerializeField] private VariableRowPool _pooler;
+        public static CustomGraph.GraphVariables currentStorage;
 
         private void Start()
         {
             GraphLibrary.OnSelectedGraphChanged += LoadNewArguments;
-            RefreshArguments(GraphLibrary.CurrentEditedGraphStorage);
+            LoadNewArguments(GraphLibrary.CurrentEditedGraphStorage);
         }
         private void OnDestroy() => GraphLibrary.OnSelectedGraphChanged -= LoadNewArguments;
 
         private void LoadNewArguments(CustomGraph.GraphVariables obj)
         {
             UnloadPreviousArguments();
-            RefreshArguments(obj);
+            currentStorage = obj.CreateDeepCopy();
+            RefreshArguments();
         }
 
-        private void RefreshArguments(CustomGraph.GraphVariables obj)
+        private void RefreshArguments()
         {
             Selectable firstSelectable = null;
             GameObject FirstRow = null;
             GameObject previousRow = null;
 
-            foreach (var item in obj)
+            foreach (var item in currentStorage)
             {
                 if (item.Name == "Seed") continue;
-                GraphVariableFieldUI row = GetCorrespondingRow(obj, item);
+                GraphVariableFieldUI row = GetCorrespondingRow(currentStorage, item);
 
                 if (row != null)
                 {

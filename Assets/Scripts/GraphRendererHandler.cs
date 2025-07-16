@@ -1,4 +1,3 @@
-using LibNoise;
 using UnityEngine;
 using XNoise;
 using static XNoise.Renderer;
@@ -7,8 +6,6 @@ namespace XNoise_DemoWebglPlayer
 {
     public class GraphRendererHandler : MonoBehaviour
     {
-        // use render tex directly to speed up process
-        private Texture2D output;
         [SerializeField] private Material[] _materials;
 
         private void Awake()
@@ -54,17 +51,22 @@ namespace XNoise_DemoWebglPlayer
         {
             var graph = GraphLibrary.CurrentGraph;
 
+            graph.runtimeStorage = GraphArgumentsHandler.currentStorage;
             graph.renderer.input = graph.GetGenerator() as INoiseStrategy;
             graph.renderer.width = (int)TextureSizeHandler.CurrentResolution.x;
             graph.renderer.Height = (int)TextureSizeHandler.CurrentResolution.y;
             graph.renderer.projectionMode = (ProjectionMode)ProjectionHandler.ProjectionType;
             graph.renderer.renderMode = XNoise.Renderer.RenderMode.GPU;
 
-            //graph.runtimeStorage = GraphArgumentsHandler.Variables;
-            //print("-------------------- COPY --------------------");
-            //GraphArgumentsHandler.Variables.DebugDictionnaryInDepth();
-            //print("-------------------- ORIGINAL --------------------");
-            //graph.originalStorage.DebugDictionnaryInDepth();
+            Debug.Log($"<color=red>+------------------------------------ EDITED -----------------------------------+</color>");
+            GraphArgumentsHandler.currentStorage.DebugDictionnaryInDepth();
+            Debug.Log($"<color=red>+------------------------------------ RUNTIME -----------------------------------+</color>");
+            graph.runtimeStorage.DebugDictionnaryInDepth();
+            Debug.Log($"<color=red>+------------------------------------ ORIGINAL -----------------------------------+</color>");
+            graph.originalStorage.DebugDictionnaryInDepth();
+            Debug.Log($"<color=red>+------------------------------------ OFF -----------------------------------+</color>");
+
+
             graph.renderer.Render();
             UpdateAllMaterials(graph.renderer.rtex);
         }

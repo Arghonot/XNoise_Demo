@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4863,6 +4863,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 807143091}
     m_Modifications:
+    - target: {fileID: 3924026510761431993, guid: 6ee345909b6ff5a4faff0915d5546287, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4467624116287764709, guid: 6ee345909b6ff5a4faff0915d5546287, type: 3}
       propertyPath: m_IsOn
       value: 0
@@ -9912,6 +9916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809924774}
+  - component: {fileID: 1809924781}
   - component: {fileID: 1809924773}
   - component: {fileID: 1809924775}
   - component: {fileID: 1809924776}
@@ -9919,7 +9924,6 @@ GameObject:
   - component: {fileID: 1809924778}
   - component: {fileID: 1809924779}
   - component: {fileID: 1809924780}
-  - component: {fileID: 1809924781}
   - component: {fileID: 1809924782}
   - component: {fileID: 1809924783}
   - component: {fileID: 1809924784}

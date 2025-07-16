@@ -98,17 +98,17 @@ MonoBehaviour:
       Value: 2
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 8919
+      Value: 4414
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 1
+      Value: 5
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 1
+      Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 1
+      Value: 2
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -150,17 +150,17 @@ MonoBehaviour:
       Value: 2
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 8919
+      Value: 4414
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 1
+      Value: 5
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 1
+      Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 1
+      Value: 2
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -247,14 +247,14 @@ MonoBehaviour:
   m_Name: Root Module Base
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 920, y: 632}
+  position: {x: 792, y: 632}
   ports:
     keys:
     - Input
     values:
     - _fieldName: Input
       _node: {fileID: 1501263510569520547}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: Perlin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 651.4494, y: 515.58905}
+  position: {x: 552, y: 568}
   ports:
     keys:
     - Output
