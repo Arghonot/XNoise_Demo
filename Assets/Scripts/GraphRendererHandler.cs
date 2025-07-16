@@ -1,5 +1,7 @@
 using LibNoise;
 using UnityEngine;
+using XNoise;
+using static XNoise.Renderer;
 
 namespace XNoise_DemoWebglPlayer
 {
@@ -52,17 +54,18 @@ namespace XNoise_DemoWebglPlayer
         {
             var graph = GraphLibrary.CurrentGraph;
 
-            graph.renderer.input = graph.GetGenerator();
+            graph.renderer.input = graph.GetGenerator() as INoiseStrategy;
             graph.renderer.width = (int)TextureSizeHandler.CurrentResolution.x;
             graph.renderer.Height = (int)TextureSizeHandler.CurrentResolution.y;
-            graph.renderer.projectionMode = ProjectionHandler.ProjectionType;
+            graph.renderer.projectionMode = (ProjectionMode)ProjectionHandler.ProjectionType;
+            graph.renderer.renderMode = XNoise.Renderer.RenderMode.GPU;
 
             //graph.runtimeStorage = GraphArgumentsHandler.Variables;
             //print("-------------------- COPY --------------------");
             //GraphArgumentsHandler.Variables.DebugDictionnaryInDepth();
             //print("-------------------- ORIGINAL --------------------");
             //graph.originalStorage.DebugDictionnaryInDepth();
-            graph.renderer.RenderGPU();
+            graph.renderer.Render();
             UpdateAllMaterials(graph.renderer.rtex);
         }
 

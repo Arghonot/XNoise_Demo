@@ -10107,7 +10107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pooler: {fileID: 1809924783}
-  _rowsHolder: {fileID: 1670748682}
 --- !u!114 &1809924781
 MonoBehaviour:
   m_ObjectHideFlags: 0
