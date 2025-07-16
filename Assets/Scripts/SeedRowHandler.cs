@@ -55,7 +55,7 @@ namespace XNoise_DemoWebglPlayer
         {
             _blocker.SetActive(!GraphLibrary.CurrentEditedGraphStorage.ContainName("Seed"));
 
-            if (_blocker.active) return;
+            if (_blocker.activeInHierarchy) return;
             var seed = GraphLibrary.CurrentEditedGraphStorage.GetContainerInstance(GraphLibrary.CurrentEditedGraphStorage.GetGUIDFromName("Seed"));
             _seedHandler.Setup(seed.Name, seed.GUID, seed.GetValue());
         }
