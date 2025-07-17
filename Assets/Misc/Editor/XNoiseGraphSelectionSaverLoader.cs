@@ -8,7 +8,6 @@ using UnityEngine;
 using XNode;
 using XNoise;
 using Newtonsoft.Json;
-using UnityEngine.Analytics;
 
 namespace CustomUnitTesting
 {

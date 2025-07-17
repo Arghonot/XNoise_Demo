@@ -98,17 +98,17 @@ MonoBehaviour:
       Value: 2
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 4414
+      Value: 5453
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 5
+      Value: 3
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
       Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 2
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -150,17 +150,17 @@ MonoBehaviour:
       Value: 2
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 4414
+      Value: 5453
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 5
+      Value: 3
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
       Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 2
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -170,27 +170,27 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: d8a26e97-a3a3-4191-8998-3139719cd42e
+    GUID: 7dc06ff8-aed9-4eb8-8350-f858f4144107
     Floats: []
     Longs: []
     Bools: []
     Ints:
     - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
       Name: Octaves
-      Value: 2
+      Value: 1
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 8919
+      Value: 5453
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 1
+      Value: 3
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 3
+      Value: 2
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 3
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []

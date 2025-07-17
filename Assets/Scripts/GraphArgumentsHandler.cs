@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 namespace XNoise_DemoWebglPlayer
 {
-
-
     public class GraphArgumentsHandler : MonoBehaviour
     {
         public static event Action<Selectable> OnFinishedLoadingArguments;
@@ -42,7 +40,6 @@ namespace XNoise_DemoWebglPlayer
                 {
                     SetupItem(row, item, ref firstSelectable, ref previousRow);
                     if (FirstRow == null) FirstRow = row.gameObject;
-                    SetupItem(row, item, ref firstSelectable, ref previousRow);
                 }
             }
 

@@ -41,6 +41,8 @@ namespace XNoise_DemoWebglPlayer
         public TMP_InputField customTextureHeight => _customTextureHeight;
         [SerializeField] private GameObject _customTextureDimensionHolder;
         public GameObject customTextureDimensionHolder => _customTextureDimensionHolder;
+        [SerializeField] private GameObject _textureDimensionLabel;
+        public GameObject textureDimensionLabel => _textureDimensionLabel;
 
         public static event Action openPortfolioButtonClicked;
         public static event Action downloadButtonClicked;
