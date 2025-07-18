@@ -53,10 +53,10 @@ namespace XNoise_DemoWebglPlayer
 
         private void SetupSeedField()
         {
-            _blocker.SetActive(!GraphLibrary.CurrentEditedGraphStorage.ContainName("Seed"));
+            _blocker.SetActive(!GraphArgumentsHandler.currentStorage.ContainName("Seed"));
 
             if (_blocker.activeInHierarchy) return;
-            var seed = GraphLibrary.CurrentEditedGraphStorage.GetContainerInstance(GraphLibrary.CurrentEditedGraphStorage.GetGUIDFromName("Seed"));
+            var seed = GraphArgumentsHandler.currentStorage.GetContainerInstance(GraphArgumentsHandler.currentStorage.GetGUIDFromName("Seed"));
             _seedHandler.Setup(seed.Name, seed.GUID, seed.GetValue());
         }
     }

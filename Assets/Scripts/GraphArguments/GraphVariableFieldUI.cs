@@ -14,7 +14,7 @@ namespace XNoise_DemoWebglPlayer
 
         protected void RaiseValueChanged(object value)
         {
-            GraphLibrary.CurrentGraph.originalStorage.SetValue(guid, value);
+            GraphArgumentsHandler.currentStorage.SetValue(guid, value);
             OnValueChanged?.Invoke(guid, value);
         }
 

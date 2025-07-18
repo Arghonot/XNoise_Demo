@@ -20,7 +20,6 @@ namespace XNoise_DemoWebglPlayer
             TextureSizeHandler.OnTextureSizeChanged += SimpleEventReceivedHandler;
         }
 
-
         private void OnDestroy()
         {
             ShortcutHandler.OnPressedG -= SimpleEventReceivedHandler;
@@ -39,7 +38,7 @@ namespace XNoise_DemoWebglPlayer
         private void IntEventReceivedHandler(int obj) => this.enabled = true;
         private void VariableFieldUIEventReceivedHandler(string arg1, object arg2)
         {
-            GraphArgumentsHandler.currentStorage.SetValue(arg1, arg2);
+            var graph = GraphLibrary.CurrentGraph;
             this.enabled = true;
         }
 
@@ -53,8 +52,7 @@ namespace XNoise_DemoWebglPlayer
         {
             var graph = GraphLibrary.CurrentGraph;
 
-            graph.runtimeStorage = GraphArgumentsHandler.currentStorage;
-            graph.renderer.input = graph.GetGenerator() as INoiseStrategy;
+            graph.renderer.input = graph.Run(GraphArgumentsHandler.currentStorage) as INoiseStrategy;
             graph.renderer.width = (int)TextureSizeHandler.CurrentResolution.x;
             graph.renderer.Height = (int)TextureSizeHandler.CurrentResolution.y;
             graph.renderer.projectionMode = (XNoise.Renderer.ProjectionMode)ProjectionHandler.ProjectionType;

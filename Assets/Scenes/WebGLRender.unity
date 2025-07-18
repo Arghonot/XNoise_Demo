@@ -8665,6 +8665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1559324770}
   - component: {fileID: 1559324771}
+  - component: {fileID: 1559324772}
   m_Layer: 0
   m_Name: ObjectOrigin
   m_TagString: Untagged
@@ -8712,6 +8713,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1559324772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559324769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9786b2972c54a143989fd92622cff4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalStorage:
+    GUID: bc3ee799-b1c4-420b-bf6f-d9cf4ad5988b
+    Floats: []
+    Longs: []
+    Bools: []
+    Ints:
+    - GUID: 34746503-f381-4034-a020-647598203cba
+      Name: TestVariable
+      Value: 2
+    Doubles: []
+    Strings: []
+    AnimationCurves: []
+    Transforms: []
+    NavmeshAgents: []
+    GameOjbects: []
+    Vector3s: []
+    Quaternions: []
+    QualityModes: []
+  CopyStorage:
+    GUID: 0344b03d-3546-491c-9b93-6d8bb5e7ed1f
+    Floats: []
+    Longs: []
+    Bools: []
+    Ints:
+    - GUID: 34746503-f381-4034-a020-647598203cba
+      Name: TestVariable
+      Value: 35434
+    Doubles: []
+    Strings: []
+    AnimationCurves: []
+    Transforms: []
+    NavmeshAgents: []
+    GameOjbects: []
+    Vector3s: []
+    Quaternions: []
+    QualityModes: []
 --- !u!1 &1575496078
 GameObject:
   m_ObjectHideFlags: 0
@@ -10150,6 +10199,24 @@ MonoBehaviour:
   - graph: {fileID: 11400000, guid: a8a5dbb0e5a059e47b0240f68c3962d6, type: 2}
     graphOutputExample: {fileID: -743387691, guid: ab48a549ba424a84d8fce73a9b036ee2, type: 3}
     graphPreview: {fileID: 2008158142, guid: 2fa4bf88c6bf7c24fb360cebddf0a516, type: 3}
+  - graph: {fileID: 11400000, guid: eab1ee105f6662241823fd44d5a83e60, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: e978a75ab97a0404d88d737ef857953d, type: 3}
+    graphPreview: {fileID: 2008158142, guid: 2fa4bf88c6bf7c24fb360cebddf0a516, type: 3}
+  - graph: {fileID: 11400000, guid: 53236d3ab68ebb84d9bf4ab4f1654796, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: 30d3892385536ae4bb4a999f467dcf1e, type: 3}
+    graphPreview: {fileID: 21300000, guid: 694aafbc1ef278c47b90816b21206c78, type: 3}
+  - graph: {fileID: 11400000, guid: d5f0d605b3261134ebbc79769df07316, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: 30d3892385536ae4bb4a999f467dcf1e, type: 3}
+    graphPreview: {fileID: 21300000, guid: 694aafbc1ef278c47b90816b21206c78, type: 3}
+  - graph: {fileID: 11400000, guid: fc2517f18bb73194089b8b22f4f8eb82, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: 8deca0a4ef489b84c8648f8df72d310b, type: 3}
+    graphPreview: {fileID: 21300000, guid: 694aafbc1ef278c47b90816b21206c78, type: 3}
+  - graph: {fileID: 11400000, guid: 40281aedbe856144d89ae5dc3aa34338, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: 8deca0a4ef489b84c8648f8df72d310b, type: 3}
+    graphPreview: {fileID: 21300000, guid: 694aafbc1ef278c47b90816b21206c78, type: 3}
+  - graph: {fileID: 11400000, guid: f93274d34190ce94bb2f62ddc88f2621, type: 2}
+    graphOutputExample: {fileID: 21300000, guid: 8deca0a4ef489b84c8648f8df72d310b, type: 3}
+    graphPreview: {fileID: 21300000, guid: 694aafbc1ef278c47b90816b21206c78, type: 3}
 --- !u!114 &1809924776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10190,6 +10257,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bbe075a4fb625b04aa7ac768dbdb7641, type: 3}
   - {fileID: 21300000, guid: d2943b9eaa44c7e46b3c74b588256ab0, type: 3}
   - {fileID: 21300000, guid: c4827c0050e1f0d4b96e03129c0cda7c, type: 3}
+  - {fileID: 1733808928, guid: 97c685dc36907cb41909faf9580117c9, type: 3}
   - {fileID: 21300000, guid: 7bb7f46e57bdc7f48be2e21962b2d467, type: 3}
   - {fileID: 21300000, guid: ca9d049ca960fec4da169c3752b5539a, type: 3}
   - {fileID: 21300000, guid: 8deca0a4ef489b84c8648f8df72d310b, type: 3}

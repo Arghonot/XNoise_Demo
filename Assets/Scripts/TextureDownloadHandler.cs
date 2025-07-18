@@ -54,7 +54,7 @@ namespace XNoise_DemoWebglPlayer
         private string GetAllArgumentsValues()
         {
             string result = string.Empty;
-            foreach (var item in GraphLibrary.CurrentEditedGraphStorage)
+            foreach (var item in GraphArgumentsHandler.currentStorage)
             {
                 if (item.Name == "Seed") continue;
                 result += $"_{item.Name}_{item.GetValue()}";

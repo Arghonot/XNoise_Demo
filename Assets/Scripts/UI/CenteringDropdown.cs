@@ -8,6 +8,8 @@ public class CenteringDropdown : MonoBehaviour
     [SerializeField] private TMP_Dropdown _dropdown;
     [SerializeField] private Scrollbar _scrollbar;
 
+    private float yPositionForSingleItem => 1 / _dropdown.options.Count;
+
     private void Awake()
     {
         StartCoroutine(ScrollToSelectedItem());
@@ -20,6 +22,6 @@ public class CenteringDropdown : MonoBehaviour
         float currentValue = _dropdown.value;
         float optionAmount = _dropdown.options.Count;
 
-        _scrollbar.value = 1 - (currentValue / optionAmount);
+        _scrollbar.value = Mathf.Clamp(1 - (currentValue / optionAmount), yPositionForSingleItem, 1 - yPositionForSingleItem);
     }
 }

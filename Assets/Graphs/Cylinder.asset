@@ -112,7 +112,7 @@ MonoBehaviour:
     values:
     - _fieldName: Input
       _node: {fileID: 1501263510569520547}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
