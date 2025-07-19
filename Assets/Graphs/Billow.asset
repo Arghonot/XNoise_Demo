@@ -95,20 +95,20 @@ MonoBehaviour:
     Ints:
     - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
       Name: Octaves
-      Value: 1
+      Value: 6
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 1
+      Value: 0
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 1
+      Value: 0.6
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 2
+      Value: 3
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 1
+      Value: 0.4
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -147,20 +147,20 @@ MonoBehaviour:
     Ints:
     - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
       Name: Octaves
-      Value: 1
+      Value: 6
     - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
       Name: Seed
-      Value: 1
+      Value: 0
     Doubles:
     - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
       Name: Frequency
-      Value: 1
+      Value: 0.6
     - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
       Name: Lacunarity
-      Value: 2
+      Value: 3
     - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
       Name: Persistence
-      Value: 1
+      Value: 0.4
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -170,12 +170,27 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: 6244d868-eee7-4e10-9f12-ef18332884a1
+    GUID: 43434f90-02d4-4aca-b54f-efb99f25f895
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
-    Doubles: []
+    Ints:
+    - GUID: 43a52e4e-f8b6-4f3a-8ed1-e60fe8ebdb80
+      Name: Octaves
+      Value: 6
+    - GUID: 624e4706-ae8d-4a23-a7b2-e0bd0b3a037d
+      Name: Seed
+      Value: 5995
+    Doubles:
+    - GUID: d6f58061-0716-44da-a1e2-c1c35709aea9
+      Name: Frequency
+      Value: 0.4
+    - GUID: f6d7cab1-e1f7-4a2c-acb9-68f90f3761db
+      Name: Lacunarity
+      Value: 3
+    - GUID: 7b48d4be-957f-40d6-9bb1-0680053bc418
+      Name: Persistence
+      Value: 0.6
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -239,7 +254,7 @@ MonoBehaviour:
     values:
     - _fieldName: Input
       _node: {fileID: 1501263510569520547}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output

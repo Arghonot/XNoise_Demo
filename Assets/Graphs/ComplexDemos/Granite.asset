@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 232}
+  position: {x: -152, y: 232}
   ports:
     keys:
     - Output
@@ -22,14 +22,17 @@ MonoBehaviour:
       _node: {fileID: -9194268875433234242}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: persistence
+        node: {fileID: 7222546576116337370}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 3
+  _guid: 53fb4a1e-e58b-418a-91d5-f7ea74adee0d
+  _variableName: Billow_Persistence
 --- !u!114 &-9010299026774696978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +82,10 @@ MonoBehaviour:
       _node: {fileID: -9010299026774696978}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -1846026317998371906}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -88,7 +94,10 @@ MonoBehaviour:
       _node: {fileID: -9010299026774696978}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 1623579735247316511}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -108,23 +117,26 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 328}
+  position: {x: -152, y: 328}
   ports:
     keys:
     - Output
     values:
     - _fieldName: Output
       _node: {fileID: -7847135239526710045}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Octaves
+        node: {fileID: 7222546576116337370}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 9
+  _guid: da936efe-ed3f-4104-b369-ecff0200d864
+  _variableName: Billow_Octaves
 --- !u!114 &-6531543011114288113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +150,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 648}
+  position: {x: -152, y: 552}
   ports:
     keys:
     - Output
@@ -147,14 +159,17 @@ MonoBehaviour:
       _node: {fileID: -6531543011114288113}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: frequency
+        node: {fileID: -5387195701762760853}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 4
+  _guid: 7214ae7e-0d20-453c-8e14-18dbdf63718e
+  _variableName: Voronoi_Frequency
 --- !u!114 &-5387195701762760853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +183,7 @@ MonoBehaviour:
   m_Name: Voronoi
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 296, y: 456}
+  position: {x: 184, y: 616}
   ports:
     keys:
     - Output
@@ -193,7 +208,10 @@ MonoBehaviour:
       _node: {fileID: -5387195701762760853}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -6531543011114288113}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -202,7 +220,10 @@ MonoBehaviour:
       _node: {fileID: -5387195701762760853}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -3410097402591533683}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -211,7 +232,10 @@ MonoBehaviour:
       _node: {fileID: -5387195701762760853}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -3303037064440138705}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -220,7 +244,10 @@ MonoBehaviour:
       _node: {fileID: -5387195701762760853}
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 3523213127971561816}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -242,7 +269,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 744}
+  position: {x: -152, y: 648}
   ports:
     keys:
     - Output
@@ -251,14 +278,17 @@ MonoBehaviour:
       _node: {fileID: -3410097402591533683}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: displacement
+        node: {fileID: -5387195701762760853}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 5
+  _guid: 456629d6-a794-4d0b-8af3-89f14dcc4ee1
+  _variableName: Voronoi_Displacement
 --- !u!114 &-3303037064440138705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +302,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -255.06992, y: 530.40295}
+  position: {x: -152, y: 424}
   ports:
     keys:
     - Output
@@ -281,7 +311,13 @@ MonoBehaviour:
       _node: {fileID: -3303037064440138705}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Seed
+        node: {fileID: 7222546576116337370}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: -5387195701762760853}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
@@ -289,6 +325,39 @@ MonoBehaviour:
   VariableIndex: 10
   _guid: 0a514fab-29cb-4ef8-8e08-5b51d16d74dc
   _variableName: Seed
+--- !u!114 &-3163322026698448480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 792, y: 280}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -3163322026698448480}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Power
+        node: {fileID: 5542589702691267637}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 6
+  _guid: 02cd1596-8d0a-4927-9e09-331bbb37fbcb
+  _variableName: Turbulence_Power
 --- !u!114 &-2947946827339645825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +371,7 @@ MonoBehaviour:
   m_Name: Blackboard
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 936, y: 488}
+  position: {x: 1160, y: 488}
   ports:
     keys: []
     values: []
@@ -358,7 +427,7 @@ MonoBehaviour:
     Vector3s: []
     Quaternions: []
     QualityModes: []
---- !u!114 &-2868729249220937341
+--- !u!114 &-1846026317998371906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -371,23 +440,26 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 840}
+  position: {x: 184, y: 408}
   ports:
     keys:
     - Output
     values:
     - _fieldName: Output
-      _node: {fileID: -2868729249220937341}
+      _node: {fileID: -1846026317998371906}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Bias
+        node: {fileID: -9010299026774696978}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 7
+  _guid: ce4d7f33-63e5-4977-bf61-1b7b06f030fd
+  _variableName: ScaleBias_Bias
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,8 +486,11 @@ MonoBehaviour:
   - {fileID: -7847135239526710045}
   - {fileID: -6531543011114288113}
   - {fileID: -3410097402591533683}
-  - {fileID: -2868729249220937341}
   - {fileID: -3303037064440138705}
+  - {fileID: 3523213127971561816}
+  - {fileID: -1846026317998371906}
+  - {fileID: 1623579735247316511}
+  - {fileID: -3163322026698448480}
   blackboard: {fileID: -2947946827339645825}
   originalStorage:
     GUID: b95ae9e8-9948-4477-b11b-ebaffc94bbb3
@@ -482,6 +557,72 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   rootNode: {fileID: 6262891609850877368}
+--- !u!114 &1623579735247316511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 184, y: 504}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 1623579735247316511}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Scale
+        node: {fileID: -9010299026774696978}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 8
+  _guid: 547c8c0e-3687-4174-b8f5-2c8d430187a4
+  _variableName: ScaleBias_Scale
+--- !u!114 &3523213127971561816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -152, y: 744}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 3523213127971561816}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: distance
+        node: {fileID: -5387195701762760853}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 0
+  _guid: 7d809601-8f56-4ee7-9c86-c9381971a331
+  _variableName: Voronoi_Distance
 --- !u!114 &5431268587583090520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +636,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 40}
+  position: {x: -152, y: 40}
   ports:
     keys:
     - Output
@@ -504,12 +645,15 @@ MonoBehaviour:
       _node: {fileID: 5431268587583090520}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: frequency
+        node: {fileID: 7222546576116337370}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
+  VariableIndex: 1
   _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
   _variableName: Billow_Frequency
 --- !u!114 &5542589702691267637
@@ -560,7 +704,10 @@ MonoBehaviour:
       _node: {fileID: 5542589702691267637}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -3163322026698448480}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -609,7 +756,7 @@ MonoBehaviour:
   m_Name: Billow
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 296, y: 264}
+  position: {x: 184, y: 184}
   ports:
     keys:
     - Output
@@ -636,7 +783,10 @@ MonoBehaviour:
       _node: {fileID: 7222546576116337370}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 5431268587583090520}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -645,7 +795,10 @@ MonoBehaviour:
       _node: {fileID: 7222546576116337370}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: 8875836120999441294}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -654,7 +807,10 @@ MonoBehaviour:
       _node: {fileID: 7222546576116337370}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -9194268875433234242}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -663,7 +819,10 @@ MonoBehaviour:
       _node: {fileID: 7222546576116337370}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -7847135239526710045}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -672,7 +831,10 @@ MonoBehaviour:
       _node: {fileID: 7222546576116337370}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -3303037064440138705}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -761,7 +923,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 40, y: 136}
+  position: {x: -152, y: 136}
   ports:
     keys:
     - Output
@@ -770,11 +932,14 @@ MonoBehaviour:
       _node: {fileID: 8875836120999441294}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: lacunarity
+        node: {fileID: 7222546576116337370}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 0
-  _guid: 3ed949f1-8871-4c63-a388-1ec52c1f1073
-  _variableName: Billow_Frequency
+  VariableIndex: 2
+  _guid: 74e56e78-5c33-4d0d-bf6f-700c04df15d5
+  _variableName: Billow_Lacunarity

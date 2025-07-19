@@ -107,7 +107,7 @@ MonoBehaviour:
     Doubles:
     - GUID: 7711c2bd-00b1-4674-9a38-32e9577b10bf
       Name: Value
-      Value: 1
+      Value: 0.25
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -143,7 +143,7 @@ MonoBehaviour:
     Doubles:
     - GUID: 7711c2bd-00b1-4674-9a38-32e9577b10bf
       Name: Value
-      Value: 1
+      Value: 0.25
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -153,12 +153,15 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: 6244d868-eee7-4e10-9f12-ef18332884a1
+    GUID: 81b87509-0383-4c21-9562-1a6697398a28
     Floats: []
     Longs: []
     Bools: []
     Ints: []
-    Doubles: []
+    Doubles:
+    - GUID: 7711c2bd-00b1-4674-9a38-32e9577b10bf
+      Name: Value
+      Value: 0.2
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -189,7 +192,7 @@ MonoBehaviour:
     values:
     - _fieldName: Input
       _node: {fileID: 1501263510569520547}
-      _typeQualifiedName: LibNoise.SerializableModuleBase, Assembly-CSharp, Version=1.0.0.0,
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
