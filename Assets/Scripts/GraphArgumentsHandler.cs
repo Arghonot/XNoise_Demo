@@ -1,5 +1,6 @@
 using CustomGraph;
 using System;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,7 @@ namespace XNoise_DemoWebglPlayer
             Selectable firstSelectable = null;
             GameObject FirstRow = null;
             GameObject previousRow = null;
+            StringBuilder builder = new StringBuilder();
 
             foreach (var item in currentStorage)
             {

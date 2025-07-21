@@ -1,4 +1,7 @@
+using CustomGraph;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using XNoise;
 
 namespace XNoise_DemoWebglPlayer
 {
@@ -22,20 +25,15 @@ namespace XNoise_DemoWebglPlayer
         private void WriteFileOnDevice()
         {
 #if UNITY_WEBGL && !UNITY_EDITOR
-            SaveRenderTexture(GraphLibrary.CurrentGraph.renderer.rtex);
+            SaveRenderTexture(ImageFileHelpers.BlitMaterialToTexture(GraphRendererHandler.OriginalRenderGradient2d, (int)TextureSizeHandler.CurrentResolution.x, (int)TextureSizeHandler.CurrentResolution.y));
 #else
-            GraphLibrary.CurrentGraph.renderer.Save(GetImageName(GraphLibrary.CurrentGraph.renderer.rtex));
+            GraphLibrary.CurrentGraph.renderer.Save(ImageFileHelpers.BlitMaterialToTexture(GraphRendererHandler.OriginalRenderGradient2d), GetImageName(GraphLibrary.CurrentGraph.renderer.rtex));
 #endif
         }
 
-        public void SaveRenderTexture(RenderTexture rtex)
+        public void SaveRenderTexture(Texture2D tex)
         {
-            string fileName = GetImageName(rtex);
-            Texture2D tex = new Texture2D(rtex.width, rtex.height, TextureFormat.RGBA32, false);
-            RenderTexture.active = rtex;
-            tex.ReadPixels(new Rect(0, 0, rtex.width, rtex.height), 0, 0);
-            tex.Apply();
-            RenderTexture.active = null;
+            string fileName = GetImageName(tex);
 
             byte[] pngBytes = tex.EncodeToPNG();
             Destroy(tex);
@@ -64,10 +62,19 @@ namespace XNoise_DemoWebglPlayer
 
         private string GetImageName(RenderTexture rtex)
         {
-            string graphName = GraphLibrary.CurrentGraph.name;
-            string textureSize = $"{rtex.width.ToString()}x{rtex.height.ToString()}";
+            return GetImageName(GraphLibrary.CurrentGraph.name, new Vector2(rtex.width, rtex.height));
+        }
+
+        private string GetImageName(Texture2D tex)
+        {
+            return GetImageName(GraphLibrary.CurrentGraph.name, new Vector2(tex.width, tex.height));
+        }
+
+        private string GetImageName(string graphName, Vector2 texSize)
+        {
+            string textureSize = $"{texSize.x.ToString()}x{texSize.y.ToString()}";
             string seed = SeedRowHandler.Seed;
-            return $"{graphName}_{textureSize}_{seed}__{GetAllArgumentsValues()}.png";
+            return $"{graphName}_{textureSize}_[Seed]_{seed}__{GetAllArgumentsValues()}.png";
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9149328528469767652
+--- !u!114 &-7419076199406997109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,234 +9,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
+  m_Script: {fileID: 11500000, guid: f783121574cde334d937a41793f12f3d, type: 3}
+  m_Name: Scale Bias
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -296, y: 520}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -9149328528469767652}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: distance
-        node: {fileID: -6927890714353905171}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 0
-  _guid: 9e906a80-9481-49c4-9c7f-46a0b133cd58
-  _variableName: Voronoi_Distance
---- !u!114 &-8803513005934921731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d611f8767cac8664288fff3748fbc000, type: 3}
-  m_Name: Turbulence
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 472, y: 312}
+  position: {x: 488, y: 648}
   ports:
     keys:
     - Output
     - Input
-    - Power
+    - Bias
+    - Scale
     values:
     - _fieldName: Output
-      _node: {fileID: -8803513005934921731}
+      _node: {fileID: -7419076199406997109}
       _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: SourceB
+        node: {fileID: -6545485200204009762}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
     - _fieldName: Input
-      _node: {fileID: -8803513005934921731}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: -19047269047872069}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 4
-      _dynamic: 0
-    - _fieldName: Power
-      _node: {fileID: -8803513005934921731}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 3548718029315369426}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-  Power: 1
---- !u!114 &-7708215967116390450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 232, y: 504}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -7708215967116390450}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Power
-        node: {fileID: -6875668749799479570}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 10
-  _guid: e4805ecc-5454-4f78-9434-ce2c32703b2b
-  _variableName: Turbulence2_Power
---- !u!114 &-6927890714353905171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 170e33635b1c23e4e82a1992a7978e95, type: 3}
-  m_Name: Voronoi
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 312}
-  ports:
-    keys:
-    - Output
-    - frequency
-    - displacement
-    - Seed
-    - distance
-    values:
-    - _fieldName: Output
-      _node: {fileID: -6927890714353905171}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: -19047269047872069}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-    - _fieldName: frequency
-      _node: {fileID: -6927890714353905171}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 15383641323817170}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-    - _fieldName: displacement
-      _node: {fileID: -6927890714353905171}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 1181312444005743473}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-    - _fieldName: Seed
-      _node: {fileID: -6927890714353905171}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: -1581801588226494408}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-    - _fieldName: distance
-      _node: {fileID: -6927890714353905171}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: -9149328528469767652}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-  frequency: 8
-  displacement: 0
-  Seed: 0
-  distance: 1
---- !u!114 &-6875668749799479570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d611f8767cac8664288fff3748fbc000, type: 3}
-  m_Name: Turbulence
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 472, y: 488}
-  ports:
-    keys:
-    - Output
-    - Input
-    - Power
-    values:
-    - _fieldName: Output
-      _node: {fileID: -6875668749799479570}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-    - _fieldName: Input
-      _node: {fileID: -6875668749799479570}
+      _node: {fileID: -7419076199406997109}
       _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
@@ -245,87 +43,84 @@ MonoBehaviour:
         reroutePoints: []
       _direction: 0
       _connectionType: 1
-      _typeConstraint: 4
+      _typeConstraint: 2
       _dynamic: 0
-    - _fieldName: Power
-      _node: {fileID: -6875668749799479570}
+    - _fieldName: Bias
+      _node: {fileID: -7419076199406997109}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Scale
+      _node: {fileID: -7419076199406997109}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  Bias: 0
+  Scale: 2
+--- !u!114 &-6545485200204009762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3187bf1a4bcfcc488963f39749c6f7c, type: 3}
+  m_Name: Max
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 744, y: 504}
+  ports:
+    keys:
+    - Output
+    - SourceA
+    - SourceB
+    values:
+    - _fieldName: Output
+      _node: {fileID: -6545485200204009762}
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Input
+        node: {fileID: 6492860518831881172}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+    - _fieldName: SourceA
+      _node: {fileID: -6545485200204009762}
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: -7708215967116390450}
+        node: {fileID: 3753765498601884398}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
-  Power: 1
---- !u!114 &-6564268152542817424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 744}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -6564268152542817424}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
+    - _fieldName: SourceB
+      _node: {fileID: -6545485200204009762}
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: persistence
-        node: {fileID: -4244693964687059597}
+      - fieldName: Output
+        node: {fileID: -7419076199406997109}
         reroutePoints: []
-      _direction: 1
-      _connectionType: 0
+      _direction: 0
+      _connectionType: 1
       _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 8
-  _guid: 6d8185d8-4ffb-4996-b520-3abb00995c00
-  _variableName: Billow_Persistence
---- !u!114 &-6429900131932752706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 936}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -6429900131932752706}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Seed
-        node: {fileID: -4244693964687059597}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 13
-  _guid: ab25e0c4-0403-4da8-9f20-4ad85382355b
-  _variableName: Billow_Seed
+      _dynamic: 0
 --- !u!114 &-6320270374479172582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +134,7 @@ MonoBehaviour:
   m_Name: Multiply
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 504, y: 872}
+  position: {x: 248, y: 648}
   ports:
     keys:
     - Output
@@ -352,13 +147,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: 1986705685907878271}
-        reroutePoints: []
-      - fieldName: Input
-        node: {fileID: -6875668749799479570}
-        reroutePoints: []
-      - fieldName: SourceB
-        node: {fileID: 108363661919949014}
+        node: {fileID: -7419076199406997109}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -401,7 +190,7 @@ MonoBehaviour:
   m_Name: Blackboard
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 792, y: 584}
+  position: {x: 1336, y: 472}
   ports:
     keys: []
     values: []
@@ -413,51 +202,9 @@ MonoBehaviour:
     GUID: d428a13e-f9a7-4f58-9b66-11af1cd58847
     Floats: []
     Longs: []
-    Bools:
-    - GUID: 9e906a80-9481-49c4-9c7f-46a0b133cd58
-      Name: Voronoi_Distance
-      Value: 1
-    Ints:
-    - GUID: 76e95fed-0711-4f43-bc43-9ff6d5daba07
-      Name: Voronoi_Seed
-      Value: 0
-    - GUID: 7d41adf8-1eae-45a0-a2c6-f28dac6578d3
-      Name: Billow_Octaves
-      Value: 4
-    - GUID: ab25e0c4-0403-4da8-9f20-4ad85382355b
-      Name: Billow_Seed
-      Value: 0
-    Doubles:
-    - GUID: ccd164f8-3af3-4f4d-af36-c2727046bafd
-      Name: Voronoi_Frequency
-      Value: 8
-    - GUID: 98eab1f3-690b-4b7e-901d-d232a22f9830
-      Name: Voronoi_Displacement
-      Value: 0
-    - GUID: 4a8c2a11-1dd6-4196-bfbf-9eff84e1c278
-      Name: Scale_X
-      Value: 1
-    - GUID: 38038101-4186-4f77-8f2b-7e818f141d19
-      Name: Scale_Y
-      Value: 1
-    - GUID: c02b1498-67e1-4a37-96e7-7ab030686194
-      Name: Scale_Z
-      Value: 3
-    - GUID: 816bdefc-afce-434f-8618-174ab737568d
-      Name: Billow_Frequency
-      Value: 2
-    - GUID: e1533bb3-8dd0-4404-b784-88120bbc1fbc
-      Name: Billow_Lacunarity
-      Value: 2.12109375
-    - GUID: 6d8185d8-4ffb-4996-b520-3abb00995c00
-      Name: Billow_Persistence
-      Value: 0.375
-    - GUID: 7c44ca85-2212-4103-93df-22f6a2d0c805
-      Name: Turbulence1_Power
-      Value: 1
-    - GUID: e4805ecc-5454-4f78-9434-ce2c32703b2b
-      Name: Turbulence2_Power
-      Value: 1
+    Bools: []
+    Ints: []
+    Doubles: []
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -479,7 +226,7 @@ MonoBehaviour:
   m_Name: Billow
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 232, y: 696}
+  position: {x: -24, y: 552}
   ports:
     keys:
     - Output
@@ -506,10 +253,7 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 6182044980041264554}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -518,10 +262,7 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 7115025628508061920}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -530,10 +271,7 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: -6564268152542817424}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -542,10 +280,7 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 2345852006124943326}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -554,10 +289,7 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: -6429900131932752706}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -574,105 +306,9 @@ MonoBehaviour:
   frequency: 2
   lacunarity: 2.12109375
   persistence: 0.375
-  Octaves: 4
+  Octaves: 6
   Seed: 0
   Quality: 0
---- !u!114 &-1581801588226494408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -296, y: 424}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -1581801588226494408}
-      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Seed
-        node: {fileID: -6927890714353905171}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 11
-  _guid: 76e95fed-0711-4f43-bc43-9ff6d5daba07
-  _variableName: Voronoi_Seed
---- !u!114 &-525848646517888687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df5ab34212a21a4597888fb3a708157, type: 3}
-  m_Name: Renderer
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1166.6667, y: 553.6667}
-  ports:
-    keys:
-    - Input
-    values:
-    - _fieldName: Input
-      _node: {fileID: -525848646517888687}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 108363661919949014}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
---- !u!114 &-465811740729451192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -24, y: 200}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -465811740729451192}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Z
-        node: {fileID: -19047269047872069}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 5
-  _guid: c02b1498-67e1-4a37-96e7-7ab030686194
-  _variableName: Scale_Z
 --- !u!114 &-19047269047872069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +322,7 @@ MonoBehaviour:
   m_Name: Scale
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 232, y: 312}
+  position: {x: 216, y: 312}
   ports:
     keys:
     - Output
@@ -701,9 +337,6 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: -8803513005934921731}
-        reroutePoints: []
-      - fieldName: Input
         node: {fileID: 3753765498601884398}
         reroutePoints: []
       _direction: 1
@@ -716,7 +349,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: -6927890714353905171}
+        node: {fileID: 705821445530413602}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -726,10 +359,7 @@ MonoBehaviour:
       _node: {fileID: -19047269047872069}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 578258593334394405}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -738,10 +368,7 @@ MonoBehaviour:
       _node: {fileID: -19047269047872069}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: 954542826485658310}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -750,10 +377,7 @@ MonoBehaviour:
       _node: {fileID: -19047269047872069}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Output
-        node: {fileID: -465811740729451192}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -776,37 +400,33 @@ MonoBehaviour:
   nodes:
   - {fileID: -4498753639971505875}
   - {fileID: 6492860518831881172}
-  - {fileID: -6927890714353905171}
   - {fileID: -19047269047872069}
-  - {fileID: -8803513005934921731}
   - {fileID: -4244693964687059597}
-  - {fileID: -6875668749799479570}
-  - {fileID: 108363661919949014}
-  - {fileID: 15383641323817170}
-  - {fileID: 1181312444005743473}
-  - {fileID: -1581801588226494408}
-  - {fileID: -9149328528469767652}
-  - {fileID: 6182044980041264554}
-  - {fileID: 7115025628508061920}
-  - {fileID: -6564268152542817424}
-  - {fileID: 2345852006124943326}
-  - {fileID: -6429900131932752706}
-  - {fileID: 578258593334394405}
-  - {fileID: 954542826485658310}
-  - {fileID: -465811740729451192}
-  - {fileID: 3548718029315369426}
-  - {fileID: -7708215967116390450}
-  - {fileID: -525848646517888687}
   - {fileID: 3728755655644226420}
-  - {fileID: 878671046806627584}
   - {fileID: -6320270374479172582}
-  - {fileID: 1986705685907878271}
   - {fileID: 6754174955109077706}
-  - {fileID: 3847194446541837279}
   - {fileID: 3753765498601884398}
+  - {fileID: 705821445530413602}
+  - {fileID: -6545485200204009762}
+  - {fileID: -7419076199406997109}
   blackboard: {fileID: -4498753639971505875}
   originalStorage:
     GUID: d428a13e-f9a7-4f58-9b66-11af1cd58847
+    Floats: []
+    Longs: []
+    Bools: []
+    Ints: []
+    Doubles: []
+    Strings: []
+    AnimationCurves: []
+    Transforms: []
+    NavmeshAgents: []
+    GameOjbects: []
+    Vector3s: []
+    Quaternions: []
+    QualityModes: []
+  runtimeStorage:
+    GUID: bdc3d3b1-bdec-4f0e-9d49-c97b0a02ca67
     Floats: []
     Longs: []
     Bools:
@@ -862,24 +482,9 @@ MonoBehaviour:
     Vector3s: []
     Quaternions: []
     QualityModes: []
-  runtimeStorage:
-    GUID: 9030a9c3-572f-45a4-bc10-9d0fc3e030ca
-    Floats: []
-    Longs: []
-    Bools: []
-    Ints: []
-    Doubles: []
-    Strings: []
-    AnimationCurves: []
-    Transforms: []
-    NavmeshAgents: []
-    GameOjbects: []
-    Vector3s: []
-    Quaternions: []
-    QualityModes: []
   CanRun: 0
   rootNode: {fileID: 6492860518831881172}
---- !u!114 &15383641323817170
+--- !u!114 &705821445530413602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -888,314 +493,93 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
+  m_Script: {fileID: 11500000, guid: 26745787081e68d4ab2140ee1d2a09c9, type: 3}
+  m_Name: Perlin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -296, y: 232}
+  position: {x: -40, y: 312}
   ports:
     keys:
     - Output
+    - frequency
+    - lacunarity
+    - persistence
+    - Octaves
+    - Seed
+    - Quality
     values:
     - _fieldName: Output
-      _node: {fileID: 15383641323817170}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: frequency
-        node: {fileID: -6927890714353905171}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 1
-  _guid: ccd164f8-3af3-4f4d-af36-c2727046bafd
-  _variableName: Voronoi_Frequency
---- !u!114 &108363661919949014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab58408caf9f9e7429529c24552ea682, type: 3}
-  m_Name: Add
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 712, y: 392}
-  ports:
-    keys:
-    - Output
-    - SourceA
-    - SourceB
-    values:
-    - _fieldName: Output
-      _node: {fileID: 108363661919949014}
+      _node: {fileID: 705821445530413602}
       _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: 6492860518831881172}
-        reroutePoints: []
-      - fieldName: Input
-        node: {fileID: -525848646517888687}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-    - _fieldName: SourceA
-      _node: {fileID: 108363661919949014}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 3753765498601884398}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
-    - _fieldName: SourceB
-      _node: {fileID: 108363661919949014}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: -6320270374479172582}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
---- !u!114 &578258593334394405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -24, y: -8}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 578258593334394405}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: X
         node: {fileID: -19047269047872069}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 2
       _dynamic: 1
-  VariableIndex: 3
-  _guid: 4a8c2a11-1dd6-4196-bfbf-9eff84e1c278
-  _variableName: Scale_X
---- !u!114 &878671046806627584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df5ab34212a21a4597888fb3a708157, type: 3}
-  m_Name: Renderer
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 520, y: 1272}
-  ports:
-    keys:
-    - Input
-    values:
-    - _fieldName: Input
-      _node: {fileID: 878671046806627584}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 6754174955109077706}
-        reroutePoints: []
+    - _fieldName: frequency
+      _node: {fileID: 705821445530413602}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
---- !u!114 &954542826485658310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -24, y: 104}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 954542826485658310}
+    - _fieldName: lacunarity
+      _node: {fileID: 705821445530413602}
       _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Y
-        node: {fileID: -19047269047872069}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 4
-  _guid: 38038101-4186-4f77-8f2b-7e818f141d19
-  _variableName: Scale_Y
---- !u!114 &1181312444005743473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -296, y: 328}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 1181312444005743473}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: displacement
-        node: {fileID: -6927890714353905171}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 2
-  _guid: 98eab1f3-690b-4b7e-901d-d232a22f9830
-  _variableName: Voronoi_Displacement
---- !u!114 &1986705685907878271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df5ab34212a21a4597888fb3a708157, type: 3}
-  m_Name: Renderer
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 849.3333, y: 1182.3333}
-  ports:
-    keys:
-    - Input
-    values:
-    - _fieldName: Input
-      _node: {fileID: 1986705685907878271}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: -6320270374479172582}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
---- !u!114 &2345852006124943326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 840}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 2345852006124943326}
+    - _fieldName: persistence
+      _node: {fileID: 705821445530413602}
+      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: Octaves
+      _node: {fileID: 705821445530413602}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Octaves
-        node: {fileID: -4244693964687059597}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
+      connections: []
+      _direction: 0
+      _connectionType: 1
       _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 12
-  _guid: 7d41adf8-1eae-45a0-a2c6-f28dac6578d3
-  _variableName: Billow_Octaves
---- !u!114 &3548718029315369426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 232, y: 136}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 3548718029315369426}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
+      _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: 705821445530413602}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: Power
-        node: {fileID: -8803513005934921731}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
+      connections: []
+      _direction: 0
+      _connectionType: 1
       _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 9
-  _guid: 7c44ca85-2212-4103-93df-22f6a2d0c805
-  _variableName: Turbulence1_Power
+      _dynamic: 0
+    - _fieldName: Quality
+      _node: {fileID: 705821445530413602}
+      _typeQualifiedName: LibNoise.QualityMode, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+  frequency: 3
+  lacunarity: 2
+  persistence: 0.5
+  Octaves: 6
+  Seed: 0
+  Quality: 0
 --- !u!114 &3728755655644226420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,7 +593,7 @@ MonoBehaviour:
   m_Name: Perlin
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 88, y: 1080}
+  position: {x: -344, y: 760}
   ports:
     keys:
     - Output
@@ -1286,7 +670,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
-  frequency: 2
+  frequency: 5
   lacunarity: 2.12109375
   persistence: 0.375
   Octaves: 4
@@ -1305,7 +689,7 @@ MonoBehaviour:
   m_Name: Scale Bias
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 440, y: 8}
+  position: {x: 456, y: 312}
   ports:
     keys:
     - Output
@@ -1318,11 +702,8 @@ MonoBehaviour:
       _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: Input
-        node: {fileID: 3847194446541837279}
-        reroutePoints: []
       - fieldName: SourceA
-        node: {fileID: 108363661919949014}
+        node: {fileID: -6545485200204009762}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -1358,71 +739,8 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
-  Bias: 0
-  Scale: 0.5
---- !u!114 &3847194446541837279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df5ab34212a21a4597888fb3a708157, type: 3}
-  m_Name: Renderer
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 712, y: 8}
-  ports:
-    keys:
-    - Input
-    values:
-    - _fieldName: Input
-      _node: {fileID: 3847194446541837279}
-      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 3753765498601884398}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 1
-      _typeConstraint: 2
-      _dynamic: 0
---- !u!114 &6182044980041264554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 552}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 6182044980041264554}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: frequency
-        node: {fileID: -4244693964687059597}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 6
-  _guid: 816bdefc-afce-434f-8618-174ab737568d
-  _variableName: Billow_Frequency
+  Bias: 0.1
+  Scale: 0.25
 --- !u!114 &6492860518831881172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,7 +754,7 @@ MonoBehaviour:
   m_Name: Root Module Base
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 984, y: 408}
+  position: {x: 1016, y: 504}
   ports:
     keys:
     - Input
@@ -1447,7 +765,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: 108363661919949014}
+        node: {fileID: -6545485200204009762}
         reroutePoints: []
       _direction: 0
       _connectionType: 1
@@ -1466,7 +784,7 @@ MonoBehaviour:
   m_Name: Scale Bias
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 408, y: 1080}
+  position: {x: -24, y: 760}
   ports:
     keys:
     - Output
@@ -1479,9 +797,6 @@ MonoBehaviour:
       _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: Input
-        node: {fileID: 878671046806627584}
-        reroutePoints: []
       - fieldName: SourceB
         node: {fileID: -6320270374479172582}
         reroutePoints: []
@@ -1519,38 +834,5 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
-  Bias: -0.4
-  Scale: 1
---- !u!114 &7115025628508061920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
-  m_Name: Black Board Variable
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -8, y: 648}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 7115025628508061920}
-      _typeQualifiedName: System.Double, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: lacunarity
-        node: {fileID: -4244693964687059597}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 2
-      _dynamic: 1
-  VariableIndex: 7
-  _guid: e1533bb3-8dd0-4404-b784-88120bbc1fbc
-  _variableName: Billow_Lacunarity
+  Bias: -1
+  Scale: 2

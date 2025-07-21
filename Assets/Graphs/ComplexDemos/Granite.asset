@@ -386,39 +386,39 @@ MonoBehaviour:
     Bools:
     - GUID: 7d809601-8f56-4ee7-9c86-c9381971a331
       Name: Voronoi_Distance
-      Value: 0
+      Value: 1
     Ints:
     - GUID: da936efe-ed3f-4104-b369-ecff0200d864
       Name: Billow_Octaves
-      Value: 0
+      Value: 6
     - GUID: 0a514fab-29cb-4ef8-8e08-5b51d16d74dc
       Name: Seed
       Value: 0
     Doubles:
     - GUID: 3ed949f1-8871-4c63-a388-1ec52c1f1073
       Name: Billow_Frequency
-      Value: 0
+      Value: 8
     - GUID: 74e56e78-5c33-4d0d-bf6f-700c04df15d5
       Name: Billow_Lacunarity
-      Value: 0
+      Value: 2.18359375
     - GUID: 53fb4a1e-e58b-418a-91d5-f7ea74adee0d
       Name: Billow_Persistence
-      Value: 0
+      Value: 0.625
     - GUID: 7214ae7e-0d20-453c-8e14-18dbdf63718e
       Name: Voronoi_Frequency
-      Value: 0
+      Value: 16
     - GUID: 456629d6-a794-4d0b-8af3-89f14dcc4ee1
       Name: Voronoi_Displacement
       Value: 0
     - GUID: 02cd1596-8d0a-4927-9e09-331bbb37fbcb
       Name: Turbulence_Power
-      Value: 0
+      Value: 1
     - GUID: ce4d7f33-63e5-4977-bf61-1b7b06f030fd
       Name: ScaleBias_Bias
       Value: 0
     - GUID: 547c8c0e-3687-4174-b8f5-2c8d430187a4
       Name: ScaleBias_Scale
-      Value: 0
+      Value: 0.5
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -499,6 +499,54 @@ MonoBehaviour:
     Bools:
     - GUID: 7d809601-8f56-4ee7-9c86-c9381971a331
       Name: Voronoi_Distance
+      Value: 1
+    Ints:
+    - GUID: da936efe-ed3f-4104-b369-ecff0200d864
+      Name: Billow_Octaves
+      Value: 6
+    - GUID: 0a514fab-29cb-4ef8-8e08-5b51d16d74dc
+      Name: Seed
+      Value: 0
+    Doubles:
+    - GUID: 3ed949f1-8871-4c63-a388-1ec52c1f1073
+      Name: Billow_Frequency
+      Value: 8
+    - GUID: 74e56e78-5c33-4d0d-bf6f-700c04df15d5
+      Name: Billow_Lacunarity
+      Value: 2.18359375
+    - GUID: 53fb4a1e-e58b-418a-91d5-f7ea74adee0d
+      Name: Billow_Persistence
+      Value: 0.625
+    - GUID: 7214ae7e-0d20-453c-8e14-18dbdf63718e
+      Name: Voronoi_Frequency
+      Value: 16
+    - GUID: 456629d6-a794-4d0b-8af3-89f14dcc4ee1
+      Name: Voronoi_Displacement
+      Value: 0
+    - GUID: 02cd1596-8d0a-4927-9e09-331bbb37fbcb
+      Name: Turbulence_Power
+      Value: 1
+    - GUID: ce4d7f33-63e5-4977-bf61-1b7b06f030fd
+      Name: ScaleBias_Bias
+      Value: 0
+    - GUID: 547c8c0e-3687-4174-b8f5-2c8d430187a4
+      Name: ScaleBias_Scale
+      Value: 0.5
+    Strings: []
+    AnimationCurves: []
+    Transforms: []
+    NavmeshAgents: []
+    GameOjbects: []
+    Vector3s: []
+    Quaternions: []
+    QualityModes: []
+  runtimeStorage:
+    GUID: 4352c601-627d-4a97-9a46-9c5bc29dcba8
+    Floats: []
+    Longs: []
+    Bools:
+    - GUID: 7d809601-8f56-4ee7-9c86-c9381971a331
+      Name: Voronoi_Distance
       Value: 0
     Ints:
     - GUID: da936efe-ed3f-4104-b369-ecff0200d864
@@ -532,21 +580,6 @@ MonoBehaviour:
     - GUID: 547c8c0e-3687-4174-b8f5-2c8d430187a4
       Name: ScaleBias_Scale
       Value: 0
-    Strings: []
-    AnimationCurves: []
-    Transforms: []
-    NavmeshAgents: []
-    GameOjbects: []
-    Vector3s: []
-    Quaternions: []
-    QualityModes: []
-  runtimeStorage:
-    GUID: 1428d8cb-212e-4ed9-9cc1-d2e8c593fbba
-    Floats: []
-    Longs: []
-    Bools: []
-    Ints: []
-    Doubles: []
     Strings: []
     AnimationCurves: []
     Transforms: []

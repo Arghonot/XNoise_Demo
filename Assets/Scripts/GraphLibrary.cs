@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using XNoise;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace XNoise_DemoWebglPlayer
 {
@@ -13,6 +15,7 @@ namespace XNoise_DemoWebglPlayer
     {
         public static XnoiseGraph CurrentGraph;
         public static Sprite CurrentGraphImage;
+        public static Sprite DefaultGradient;
         public static GraphVariables CurrentEditedGraphStorage => CurrentGraph.originalStorage;
         public static event Action<GraphVariables> OnSelectedGraphChanged;
 
@@ -22,6 +25,7 @@ namespace XNoise_DemoWebglPlayer
             [SerializeField] public XnoiseGraph graph;
             [SerializeField] public Sprite graphOutputExample;
             [SerializeField] public Sprite graphPreview;
+            [SerializeField] public Sprite defaultGradient;
         }
 
         [SerializeField] private List<GraphAndMetadata> _graphs;
@@ -31,6 +35,7 @@ namespace XNoise_DemoWebglPlayer
         {
             CurrentGraph = _graphs[arg].graph;
             CurrentGraphImage = _graphs[arg].graphPreview;
+            DefaultGradient = _graphs[arg].defaultGradient;
             OnSelectedGraphChanged?.Invoke(_graphs[arg].graph.originalStorage);
         }
 
@@ -59,7 +64,11 @@ namespace XNoise_DemoWebglPlayer
             {
                 optionDatas.Add(new TMP_Dropdown.OptionData()
                 {
+#if UNITY_EDITOR
                     text = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(graph.graph)),
+#else
+                    text = graph.graph.name,
+#endif
                     image = graph.graphOutputExample
                 });
             }

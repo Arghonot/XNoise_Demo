@@ -3,7 +3,7 @@
 --- !u!30 &1
 GraphicsSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 13
+  serializedVersion: 16
   m_Deferred:
     m_Mode: 1
     m_Shader: {fileID: 69, guid: 0000000000000000f000000000000000, type: 0}
@@ -13,9 +13,6 @@ GraphicsSettings:
   m_ScreenSpaceShadows:
     m_Mode: 1
     m_Shader: {fileID: 64, guid: 0000000000000000f000000000000000, type: 0}
-  m_LegacyDeferred:
-    m_Mode: 1
-    m_Shader: {fileID: 63, guid: 0000000000000000f000000000000000, type: 0}
   m_DepthNormals:
     m_Mode: 1
     m_Shader: {fileID: 62, guid: 0000000000000000f000000000000000, type: 0}
@@ -28,6 +25,7 @@ GraphicsSettings:
   m_LensFlare:
     m_Mode: 1
     m_Shader: {fileID: 102, guid: 0000000000000000f000000000000000, type: 0}
+  m_VideoShadersIncludeMode: 2
   m_AlwaysIncludedShaders:
   - {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 15104, guid: 0000000000000000f000000000000000, type: 0}
@@ -35,9 +33,39 @@ GraphicsSettings:
   - {fileID: 15106, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 4800000, guid: 3d6162255ad963d42b1431363ecf7b1a, type: 3}
+  - {fileID: 4800000, guid: 9bb1040e05cebcb4c92eb97ef975f035, type: 3}
+  - {fileID: 4800000, guid: 61befce492aeaa8459dc96b2b768757b, type: 3}
+  - {fileID: 4800000, guid: ec7ad030b912d6e4eab7203d4eb143eb, type: 3}
+  - {fileID: 4800000, guid: 19646584dcc62084ca1f6271d40e2343, type: 3}
+  - {fileID: 4800000, guid: 56210efa97c1ad94e8e08bdd93654ed3, type: 3}
+  - {fileID: 4800000, guid: 7a3acacc2d1ea2b439363351aacc1659, type: 3}
+  - {fileID: 4800000, guid: 2ac8856bf9030974eac705ae67f94426, type: 3}
+  - {fileID: 4800000, guid: f009cada8623a74448468810c96cbf5d, type: 3}
+  - {fileID: 4800000, guid: b379efacc51173b4c9cfcce3a7ba6f7d, type: 3}
+  - {fileID: 4800000, guid: 9f87322e8553fea4eb9c5f1e1fc75880, type: 3}
+  - {fileID: 4800000, guid: 0360662a3e647f94eb8d0f19137e676d, type: 3}
+  - {fileID: 4800000, guid: c3140543f2345224cbc22ec78404cbfd, type: 3}
+  - {fileID: 4800000, guid: 8842a821fee843949a7d998369691aca, type: 3}
+  - {fileID: 4800000, guid: b61dd270047ff054ab24c956af4c2a9b, type: 3}
+  - {fileID: 4800000, guid: 83bad9948dfe30f4580c1f665baee6e8, type: 3}
+  - {fileID: 4800000, guid: 5f872dd91f2b92342a3b49509564fdf3, type: 3}
+  - {fileID: 4800000, guid: af85aaab139ee24459c78f505b772339, type: 3}
+  - {fileID: 4800000, guid: 5a48c30ed576d7442b29ac4fd52a1e32, type: 3}
+  - {fileID: 4800000, guid: 2dd42c869a99e79499018ae352be1646, type: 3}
+  - {fileID: 4800000, guid: 8ba3d4176872178408e90c76319bb9c6, type: 3}
+  - {fileID: 4800000, guid: bc533af2cf2eefa499ba3a1bdf6b5492, type: 3}
+  - {fileID: 4800000, guid: 898f20c944b8fcf49a9ef7ef7d947e2c, type: 3}
+  - {fileID: 4800000, guid: e6cb3475294ae974bae77f43f46628ed, type: 3}
+  - {fileID: 4800000, guid: b3c57c13b72584a42847b843be6b0549, type: 3}
+  - {fileID: 4800000, guid: f78d23ffde06a4e45a32273d6d8f9c0c, type: 3}
+  - {fileID: 4800000, guid: 4c27ace104495554d9ad399e8f3c3461, type: 3}
+  - {fileID: 4800000, guid: a0ad2d13666ce1846a0af31e79772cfe, type: 3}
+  - {fileID: 4800000, guid: 1fb464fe9888c174f988e5e32294c7a6, type: 3}
+  - {fileID: 4800000, guid: 8430cd280334c994b916d53deec58214, type: 3}
   m_PreloadedShaders: []
-  m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000,
-    type: 0}
+  m_PreloadShadersBatchTimeLimit: -1
+  m_SpritesDefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_CustomRenderPipeline: {fileID: 0}
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 0, z: 1}
@@ -47,6 +75,7 @@ GraphicsSettings:
   m_LightmapStripping: 0
   m_FogStripping: 0
   m_InstancingStripping: 0
+  m_BrgStripping: 0
   m_LightmapKeepPlain: 1
   m_LightmapKeepDirCombined: 1
   m_LightmapKeepDynamicPlain: 1
@@ -57,7 +86,10 @@ GraphicsSettings:
   m_FogKeepExp: 1
   m_FogKeepExp2: 1
   m_AlbedoSwatchInfos: []
+  m_RenderPipelineGlobalSettingsMap: {}
   m_LightsUseLinearIntensity: 0
   m_LightsUseColorTemperature: 0
   m_LogWhenShaderIsCompiled: 0
-  m_AllowEnlightenSupportForUpgradedProject: 0
+  m_LightProbeOutsideHullStrategy: 0
+  m_CameraRelativeLightCulling: 0
+  m_CameraRelativeShadowCulling: 0

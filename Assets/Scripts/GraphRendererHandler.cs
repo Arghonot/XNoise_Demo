@@ -5,10 +5,13 @@ namespace XNoise_DemoWebglPlayer
 {
     public class GraphRendererHandler : MonoBehaviour
     {
+        public static Material OriginalRenderGradient2d;
         [SerializeField] private Material[] _materials;
 
         private void Awake()
         {
+            // the first is for 2d and can be used to render the final image
+            OriginalRenderGradient2d = _materials[0];
             ShortcutHandler.OnPressedG += SimpleEventReceivedHandler;
             GraphVariableFieldUI.OnValueChanged += VariableFieldUIEventReceivedHandler;
             UIManager.SelectedTextureSizeIndexChanged += IntEventReceivedHandler;

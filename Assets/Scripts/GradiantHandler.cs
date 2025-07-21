@@ -1,3 +1,4 @@
+using CustomGraph;
 using TMPro;
 using UnityEngine;
 
@@ -16,11 +17,20 @@ namespace XNoise_DemoWebglPlayer
             SetupGradientDropdown();
             UpdateSelectedGradient(0);
             UIManager.SelectedGradiantIndexChanged += UpdateSelectedGradient;
+            GraphLibrary.OnSelectedGraphChanged += UseNewGraphDefaultGradient;
         }
 
         private void OnDestroy()
         {
             UIManager.SelectedGradiantIndexChanged -= UpdateSelectedGradient;
+            GraphLibrary.OnSelectedGraphChanged -= UseNewGraphDefaultGradient;
+        }
+
+        private void UseNewGraphDefaultGradient(GraphVariables variables)
+        {
+            if (GraphLibrary.CurrentGraph == null || GraphLibrary.DefaultGradient == null) return;
+            _uiManager.gradiant.value = GetGradientIndex(GraphLibrary.DefaultGradient);
+            UpdateSelectedGradient(_uiManager.gradiant.value);
         }
 
         private void SetupGradientDropdown()
@@ -47,5 +57,13 @@ namespace XNoise_DemoWebglPlayer
         }
 
         private void UpdateSelectedGradient(int obj) => CurrentGradient = _gradients[_uiManager.gradiant.value];
+
+        public int GetGradientIndex(Sprite gradient)
+        {
+            for (int i = 0; i < _gradients.Length; i++)
+                if (_gradients[i] == gradient)
+                    return i;
+            return -1;
+        }
     }
 }

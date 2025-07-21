@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WebGLRender.unity
+    guid: 6ceb784450c76ea4bb87786323f32a9e
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
