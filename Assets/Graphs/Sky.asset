@@ -177,6 +177,42 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+--- !u!114 &-4615626368629105645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -584, y: 648}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -4615626368629105645}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Seed
+        node: {fileID: -4244693964687059597}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: 3728755655644226420}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 0
+  _guid: 9c6d8913-1856-45a5-abee-5c688b5156e5
+  _variableName: Seed
 --- !u!114 &-4498753639971505875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +239,10 @@ MonoBehaviour:
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: 9c6d8913-1856-45a5-abee-5c688b5156e5
+      Name: Seed
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -289,7 +328,10 @@ MonoBehaviour:
       _node: {fileID: -4244693964687059597}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4615626368629105645}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
@@ -409,13 +451,17 @@ MonoBehaviour:
   - {fileID: 705821445530413602}
   - {fileID: -6545485200204009762}
   - {fileID: -7419076199406997109}
+  - {fileID: -4615626368629105645}
   blackboard: {fileID: -4498753639971505875}
   originalStorage:
     GUID: d428a13e-f9a7-4f58-9b66-11af1cd58847
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
+    Ints:
+    - GUID: 9c6d8913-1856-45a5-abee-5c688b5156e5
+      Name: Seed
+      Value: 0
     Doubles: []
     Strings: []
     AnimationCurves: []
@@ -426,54 +472,12 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: bdc3d3b1-bdec-4f0e-9d49-c97b0a02ca67
+    GUID: 2cd3b18b-094b-4981-9daf-a6fe0d3904a8
     Floats: []
     Longs: []
-    Bools:
-    - GUID: 9e906a80-9481-49c4-9c7f-46a0b133cd58
-      Name: Voronoi_Distance
-      Value: 1
-    Ints:
-    - GUID: 76e95fed-0711-4f43-bc43-9ff6d5daba07
-      Name: Voronoi_Seed
-      Value: 0
-    - GUID: 7d41adf8-1eae-45a0-a2c6-f28dac6578d3
-      Name: Billow_Octaves
-      Value: 4
-    - GUID: ab25e0c4-0403-4da8-9f20-4ad85382355b
-      Name: Billow_Seed
-      Value: 0
-    Doubles:
-    - GUID: ccd164f8-3af3-4f4d-af36-c2727046bafd
-      Name: Voronoi_Frequency
-      Value: 8
-    - GUID: 98eab1f3-690b-4b7e-901d-d232a22f9830
-      Name: Voronoi_Displacement
-      Value: 0
-    - GUID: 4a8c2a11-1dd6-4196-bfbf-9eff84e1c278
-      Name: Scale_X
-      Value: 1
-    - GUID: 38038101-4186-4f77-8f2b-7e818f141d19
-      Name: Scale_Y
-      Value: 1
-    - GUID: c02b1498-67e1-4a37-96e7-7ab030686194
-      Name: Scale_Z
-      Value: 3
-    - GUID: 816bdefc-afce-434f-8618-174ab737568d
-      Name: Billow_Frequency
-      Value: 2
-    - GUID: e1533bb3-8dd0-4404-b784-88120bbc1fbc
-      Name: Billow_Lacunarity
-      Value: 2.12109375
-    - GUID: 6d8185d8-4ffb-4996-b520-3abb00995c00
-      Name: Billow_Persistence
-      Value: 0.375
-    - GUID: 7c44ca85-2212-4103-93df-22f6a2d0c805
-      Name: Turbulence1_Power
-      Value: 1
-    - GUID: e4805ecc-5454-4f78-9434-ce2c32703b2b
-      Name: Turbulence2_Power
-      Value: 1
+    Bools: []
+    Ints: []
+    Doubles: []
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -656,7 +660,10 @@ MonoBehaviour:
       _node: {fileID: 3728755655644226420}
       _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-      connections: []
+      connections:
+      - fieldName: Output
+        node: {fileID: -4615626368629105645}
+        reroutePoints: []
       _direction: 0
       _connectionType: 1
       _typeConstraint: 2
