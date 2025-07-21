@@ -6,7 +6,6 @@ namespace XNoise_DemoWebglPlayer
     public class ShortcutHandler : MonoBehaviour
     {
         public static event Action OnPressedTab;
-        public static event Action OnPressedShiftTab;
         public static event Action OnPressedS;
         public static event Action OnPressedG;
         public static event Action OnPressedR;

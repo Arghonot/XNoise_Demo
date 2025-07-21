@@ -60,8 +60,6 @@ namespace XNoise_DemoWebglPlayer
         public static event Action<int> SelectedGradiantIndexChanged;
         public static event Action<int> SelectedSceneObjectChanged;
 
-        public static event Action<string, object> InputValueChanged;
-
         private void TriggerOpenPortfolioButtonClicked() => openPortfolioButtonClicked?.Invoke();
         private void TriggerSaveButtonClicked() => downloadButtonClicked?.Invoke();
         private void TriggerGenerateButtonClicked() => GenerateButtonClicked?.Invoke();
