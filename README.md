@@ -1,5 +1,7 @@
 # XNoise WebGL Demo
-
+<p align="center">
+  <img width="800" alt="XNoise" src="https://github.com/user-attachments/assets/caa957c8-fe75-4157-8f67-e0f63f2a5aa8" />
+</p>
 This is a WebGL showcase for [**XNoise**](https://github.com/Arghonot/XNoise), a GPU-accelerated procedural noise library with a node-based editor built in Unity.
 
 The demo demonstrates how to:
