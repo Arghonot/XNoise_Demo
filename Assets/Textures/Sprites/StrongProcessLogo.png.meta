@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75649dc48e7041941a87dcafa9a9c695
+guid: fb7db866abc6dd848a3bd7a584325d1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Process(1)_0
+      name: StrongProcessLogo (1) (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,8 +138,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cf7b23c9b2299e419dc09d9ddbd8f88
-      internalID: -12976561
+      spriteID: 886f95105e889e040a07fa242b6805af
+      internalID: 2014815943
       vertices: []
       indices: 
       edges: []
@@ -122,7 +148,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bad88971c56d0c143b9a3e340922b4e4
+    spriteID: 55efc8cf954f1064f92c40a32b1ee8ff
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +158,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Process(1)_0: -12976561
+      StrongProcessLogo (1) (1)_0: 2014815943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
