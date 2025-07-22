@@ -23,7 +23,7 @@ namespace XNoise_DemoWebglPlayer
         public virtual void Setup(string name, string guid, object defaultValue)
         {
             this.guid = guid;
-            _nameLabel.text = name;
+            _nameLabel.text = name.Replace("_", "  ");
         }
     }
 }

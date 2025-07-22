@@ -11,6 +11,7 @@ namespace XNoise_DemoWebglPlayer
             ShortcutHandler.OnPressedTab += HandleTab;
             GraphArgumentsHandler.OnFinishedLoadingArguments += SelectSelectable;
         }
+
         private void OnDestroy()
         {
             ShortcutHandler.OnPressedTab -= HandleTab;

@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 792, y: 280}
+  position: {x: 792, y: 168}
   ports:
     keys:
     - Output
@@ -392,6 +392,9 @@ MonoBehaviour:
       Name: Billow_Octaves
       Value: 6
     - GUID: 0a514fab-29cb-4ef8-8e08-5b51d16d74dc
+      Name: Generators_Seed
+      Value: 0
+    - GUID: cbd30290-7406-4331-8fc5-af38802aff5b
       Name: Seed
       Value: 0
     Doubles:
@@ -491,6 +494,7 @@ MonoBehaviour:
   - {fileID: -1846026317998371906}
   - {fileID: 1623579735247316511}
   - {fileID: -3163322026698448480}
+  - {fileID: 13453930776511161}
   blackboard: {fileID: -2947946827339645825}
   originalStorage:
     GUID: b95ae9e8-9948-4477-b11b-ebaffc94bbb3
@@ -505,6 +509,9 @@ MonoBehaviour:
       Name: Billow_Octaves
       Value: 6
     - GUID: 0a514fab-29cb-4ef8-8e08-5b51d16d74dc
+      Name: Generators_Seed
+      Value: 0
+    - GUID: cbd30290-7406-4331-8fc5-af38802aff5b
       Name: Seed
       Value: 0
     Doubles:
@@ -590,6 +597,39 @@ MonoBehaviour:
     QualityModes: []
   CanRun: 0
   rootNode: {fileID: 6262891609850877368}
+--- !u!114 &13453930776511161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 792, y: 264}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 13453930776511161}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Seed
+        node: {fileID: 5542589702691267637}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 11
+  _guid: cbd30290-7406-4331-8fc5-af38802aff5b
+  _variableName: Seed
 --- !u!114 &1623579735247316511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +748,7 @@ MonoBehaviour:
     - Output
     - Input
     - Power
+    - Seed
     values:
     - _fieldName: Output
       _node: {fileID: 5542589702691267637}
@@ -745,7 +786,20 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: 5542589702691267637}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 13453930776511161}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
   Power: 1
+  Seed: 0
 --- !u!114 &6262891609850877368
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ MonoBehaviour:
     - Output
     - Input
     - Power
+    - Seed
     values:
     - _fieldName: Output
       _node: {fileID: -8671983282282343109}
@@ -56,7 +57,20 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: -8671983282282343109}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 122721270922765832}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
   Power: 1
+  Seed: 0
 --- !u!114 &-7006736238029855335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +123,7 @@ MonoBehaviour:
     - Output
     - Input
     - Power
+    - Seed
     values:
     - _fieldName: Output
       _node: {fileID: -6609128703386818507}
@@ -146,7 +161,20 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: -6609128703386818507}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: 122721270922765832}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
   Power: 0.2
+  Seed: 0
 --- !u!114 &-6530165571771559517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,12 +568,51 @@ MonoBehaviour:
     Quaternions: []
     QualityModes: []
   runtimeStorage:
-    GUID: 336f0582-8c27-4b08-9b2f-f6438d0aaa94
+    GUID: 1c7ad0ab-2d49-4a16-b288-f558903a88a0
     Floats: []
     Longs: []
     Bools: []
-    Ints: []
-    Doubles: []
+    Ints:
+    - GUID: 46825ecf-8b52-4026-bc7b-592b873c4592
+      Name: Ridged_Octaves
+      Value: 6
+    - GUID: 08531d1a-5ae6-4096-880c-28b5b03b0bf6
+      Name: Seed
+      Value: 6596
+    Doubles:
+    - GUID: a2beceff-ad0e-45c6-9211-8775bef04718
+      Name: Cylinders_Frequency
+      Value: 2
+    - GUID: d6ed774e-cfeb-4651-a383-869f1dbabea2
+      Name: Rotate_X
+      Value: 90
+    - GUID: 589ce9c8-3cd8-417a-99c0-c1d59043b954
+      Name: Rotate_Y
+      Value: 25
+    - GUID: 308e5a16-e88b-40de-b94a-8844b08a31a7
+      Name: Rotate_Z
+      Value: 0
+    - GUID: 3f1e09d3-a9d3-4cb2-b084-bd807fc94f96
+      Name: Turbulence1_Power
+      Value: 1
+    - GUID: 0568e2f6-be6c-4e3f-bdb2-f4a303dab67d
+      Name: ScaleBias_Bias
+      Value: 0
+    - GUID: 333ed0f6-73d1-482f-8c7d-2004c0b35fbc
+      Name: ScaleBias_Scale
+      Value: 0.25
+    - GUID: d0b2bd84-33aa-49cc-ac45-5bebbdc7f2be
+      Name: Ridged_Frequency
+      Value: 2
+    - GUID: 798a5b48-c18d-4fb8-afe6-946e8a46553b
+      Name: Ridged_Lacunarity
+      Value: 2.20703125
+    - GUID: 399748e8-fdd2-4125-aa07-74b70eb9e231
+      Name: Turbulence_Power
+      Value: 1
+    - GUID: 6d3ed04c-2d07-4a0a-9a8d-168ff5f9fc2b
+      Name: Turbulence2_Power
+      Value: 1
     Strings: []
     AnimationCurves: []
     Transforms: []
@@ -569,7 +636,7 @@ MonoBehaviour:
   m_Name: Black Board Variable
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 280, y: 584}
+  position: {x: 24, y: 600}
   ports:
     keys:
     - Output
@@ -581,6 +648,12 @@ MonoBehaviour:
       connections:
       - fieldName: Seed
         node: {fileID: -6530165571771559517}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: -8671983282282343109}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: -6609128703386818507}
         reroutePoints: []
       _direction: 1
       _connectionType: 0

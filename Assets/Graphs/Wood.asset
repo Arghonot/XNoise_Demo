@@ -76,6 +76,36 @@ MonoBehaviour:
   XDegrees: 84
   YDegrees: 0
   ZDegrees: 0
+--- !u!114 &-8227652513667358976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df5ab34212a21a4597888fb3a708157, type: 3}
+  m_Name: Renderer
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 756.4086, y: 630.5519}
+  ports:
+    keys:
+    - Input
+    values:
+    - _fieldName: Input
+      _node: {fileID: -8227652513667358976}
+      _typeQualifiedName: LibNoise.ModuleBase, Assembly-CSharp, Version=1.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: -2182523877921657248}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
 --- !u!114 &-7792908396286425764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +236,9 @@ MonoBehaviour:
       Name: Perlin_Octaves
       Value: 3
     - GUID: e4ffa4ab-189b-46a7-b148-d0a6ed3013d2
+      Name: Perlin_Seed
+      Value: 0
+    - GUID: 9648d3c0-421d-4391-a6f6-36c5b36b430e
       Name: Seed
       Value: 0
     Doubles:
@@ -283,6 +316,42 @@ MonoBehaviour:
   VariableIndex: 11
   _guid: 9e6905c0-250b-424a-a31b-96e6863b6a15
   _variableName: Perlin_Octaves
+--- !u!114 &-5423786275099315236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84310896f6bec6e46a8af01f19ac307c, type: 3}
+  m_Name: Black Board Variable
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 232, y: 408}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: -5423786275099315236}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Seed
+        node: {fileID: -2182523877921657248}
+        reroutePoints: []
+      - fieldName: Seed
+        node: {fileID: -110568269621634074}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 2
+      _dynamic: 1
+  VariableIndex: 13
+  _guid: 9648d3c0-421d-4391-a6f6-36c5b36b430e
+  _variableName: Seed
 --- !u!114 &-5323387188058701069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +467,7 @@ MonoBehaviour:
     - Output
     - Input
     - Power
+    - Seed
     values:
     - _fieldName: Output
       _node: {fileID: -2182523877921657248}
@@ -406,6 +476,9 @@ MonoBehaviour:
       connections:
       - fieldName: Input
         node: {fileID: 4617453195146021904}
+        reroutePoints: []
+      - fieldName: Input
+        node: {fileID: -8227652513667358976}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -435,7 +508,20 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: -2182523877921657248}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: -5423786275099315236}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
   Power: 0.1
+  Seed: 2
 --- !u!114 &-1498689864453628586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,6 +651,7 @@ MonoBehaviour:
     - Output
     - Input
     - Power
+    - Seed
     values:
     - _fieldName: Output
       _node: {fileID: -110568269621634074}
@@ -605,7 +692,20 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 2
       _dynamic: 0
+    - _fieldName: Seed
+      _node: {fileID: -110568269621634074}
+      _typeQualifiedName: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: Output
+        node: {fileID: -5423786275099315236}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
   Power: 0.2
+  Seed: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,6 +744,8 @@ MonoBehaviour:
   - {fileID: -2895613925648955719}
   - {fileID: 3899101434384248324}
   - {fileID: 2374871007563900878}
+  - {fileID: -8227652513667358976}
+  - {fileID: -5423786275099315236}
   blackboard: {fileID: -7348523812123687407}
   originalStorage:
     GUID: bba2e9e9-afa6-4b68-b4c9-bb26761bd793
@@ -655,6 +757,9 @@ MonoBehaviour:
       Name: Perlin_Octaves
       Value: 3
     - GUID: e4ffa4ab-189b-46a7-b148-d0a6ed3013d2
+      Name: Perlin_Seed
+      Value: 0
+    - GUID: 9648d3c0-421d-4391-a6f6-36c5b36b430e
       Name: Seed
       Value: 0
     Doubles:
