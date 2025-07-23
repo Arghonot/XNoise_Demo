@@ -1,5 +1,6 @@
 using CustomGraph;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,8 +30,6 @@ namespace XNoise_DemoWebglPlayer
         private void RefreshArguments()
         {
             Selectable firstSelectable = null;
-            GameObject FirstRow = null;
-            GameObject previousRow = null;
             StringBuilder builder = new StringBuilder();
 
             foreach (var item in currentStorage)
@@ -40,13 +39,44 @@ namespace XNoise_DemoWebglPlayer
 
                 if (row != null)
                 {
-                    SetupItem(row, item, ref firstSelectable, ref previousRow);
-                    if (FirstRow == null) FirstRow = row.gameObject;
+                    firstSelectable = _pooler.GetSelectable(row.gameObject);
+                    row.Setup(item.Name, item.GUID, item.GetValue());
                 }
             }
-
-            if (previousRow != null && FirstRow != null) SetupNavigation(previousRow, FirstRow);
+            BuildRowNavigation();
             if (firstSelectable != null) OnFinishedLoadingArguments?.Invoke(firstSelectable);
+        }
+
+        public void BuildRowNavigation()
+        {
+            Transform container = VariableRowPool.RowContainer;
+
+            List<Selectable> activeRows = new List<Selectable>();
+
+            for (int i = 0; i < container.childCount; i++)
+            {
+                GameObject rowGO = container.GetChild(i).gameObject;
+                if (!rowGO.activeSelf) continue;
+                Selectable sel = _pooler.GetSelectable(rowGO);
+                if (sel != null) activeRows.Add(sel);
+            }
+
+            int count = activeRows.Count;
+            if (count <= 1) return;
+
+            for (int i = 0; i < count; i++)
+            {
+                Selectable current = activeRows[i];
+                Selectable next = activeRows[(i + 1) % count];
+
+                Navigation nav = current.navigation;
+                nav.mode = Navigation.Mode.Explicit;
+                nav.selectOnDown = next;
+                nav.selectOnUp = null;
+                nav.selectOnRight = null;
+                nav.selectOnLeft = null;
+                current.navigation = nav;
+            }
         }
 
         private GraphVariableFieldUI GetCorrespondingRow(GraphVariables obj, VariableStorageRoot item)
@@ -63,24 +93,6 @@ namespace XNoise_DemoWebglPlayer
             }
 
             return null;
-        }
-
-        private void SetupItem(GraphVariableFieldUI row, VariableStorageRoot item, ref Selectable firstSelectable, ref GameObject previousRow)
-        {
-            row.Setup(item.Name, item.GUID, item.GetValue());
-            if (firstSelectable == null) firstSelectable = row.GetComponentInChildren<Selectable>();
-            if (previousRow != null) SetupNavigation(previousRow, row.gameObject);
-            previousRow = row.gameObject;
-        }
-
-        private void SetupNavigation(GameObject A, GameObject B)
-        {
-            var previousRowSelectable = _pooler.GetSelectable(A);
-            var currentRowSelectable = _pooler.GetSelectable(B);
-            var nav = new Navigation { mode = Navigation.Mode.Explicit };
-
-            nav.selectOnDown = currentRowSelectable;
-            previousRowSelectable.navigation = nav;
         }
 
         private void UnloadPreviousArguments() => _pooler.ReturnAllActive();

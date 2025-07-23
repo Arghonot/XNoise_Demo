@@ -57,7 +57,6 @@ namespace XNoise_DemoWebglPlayer
 
             if (_blocker.activeInHierarchy) return;
             var guid = GraphArgumentsHandler.currentStorage.GetGUIDFromName("Seed");
-            Debug.Log($"<color=blue>+-Seed-+[GUID][{guid}][Value][{GraphArgumentsHandler.currentStorage.GetContainerInstance(guid).GetValue().ToString()}]+--+</color>");
             var seed = GraphArgumentsHandler.currentStorage.GetContainerInstance(guid);
             _seedHandler.Setup(seed.Name, seed.GUID, seed.GetValue());
         }
