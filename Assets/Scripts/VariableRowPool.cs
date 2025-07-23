@@ -8,6 +8,7 @@ namespace XNoise_DemoWebglPlayer
 
     public class VariableRowPool : MonoBehaviour
     {
+        public static Transform RowContainer;
         [Header("Prefabs")]
         [SerializeField] private GameObject _floatVariableRowPrefab;
         [SerializeField] private GameObject _booleanVariableRowPrefab;
@@ -34,6 +35,8 @@ namespace XNoise_DemoWebglPlayer
                 { VariableRowType.Numerical, new Pool { prefab = _floatVariableRowPrefab, parent = _rowContainer } },
                 { VariableRowType.Boolean, new Pool { prefab = _booleanVariableRowPrefab, parent = _rowContainer } }
             };
+
+            RowContainer = _rowContainer;
         }
 
         public GameObject RequestRow(VariableRowType type)
