@@ -12,7 +12,6 @@ namespace XNoise_DemoWebglPlayer
         {
             // the first is for 2d and can be used to render the final image
             OriginalRenderGradient2d = _materials[0];
-            ShortcutHandler.OnPressedG += SimpleEventReceivedHandler;
             GraphVariableFieldUI.OnValueChanged += VariableFieldUIEventReceivedHandler;
             UIManager.SelectedTextureSizeIndexChanged += IntEventReceivedHandler;
             UIManager.SelectedGraphIndexChanged += IntEventReceivedHandler;
@@ -25,7 +24,6 @@ namespace XNoise_DemoWebglPlayer
 
         private void OnDestroy()
         {
-            ShortcutHandler.OnPressedG -= SimpleEventReceivedHandler;
             GraphVariableFieldUI.OnValueChanged -= VariableFieldUIEventReceivedHandler;
             UIManager.SelectedTextureSizeIndexChanged -= IntEventReceivedHandler;
             UIManager.SelectedGraphIndexChanged -= IntEventReceivedHandler;

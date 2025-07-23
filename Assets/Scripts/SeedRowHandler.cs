@@ -19,6 +19,7 @@ namespace XNoise_DemoWebglPlayer
         {
             _uiManager = GetComponent<UIManager>();
 
+            ShortcutHandler.OnPressedG += GenerateNewSeed;
             GraphLibrary.OnSelectedGraphChanged += CallSeedSetup;
             UIManager.CopyButtonClicked += CopySeedToClipBoard;
             UIManager.GenerateButtonClicked += GenerateNewSeed;
@@ -29,6 +30,7 @@ namespace XNoise_DemoWebglPlayer
 
         private void OnDestroy()
         {
+            ShortcutHandler.OnPressedG -= GenerateNewSeed;
             GraphLibrary.OnSelectedGraphChanged -= CallSeedSetup;
             UIManager.CopyButtonClicked -= CopySeedToClipBoard;
             UIManager.GenerateButtonClicked -= GenerateNewSeed;
